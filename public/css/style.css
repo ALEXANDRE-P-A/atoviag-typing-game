@@ -57,15 +57,15 @@ main {
   font-size: 2.2em;
 }
 
-/* ----- スタート及びサインインボタン領域 ----- */
+/* ----- ボタン領域 ----- */
 .btn_field {
   width: 100%;
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-/* ----- スタート及びサインインボタン ----- */
+/* ----- ボタン ----- */
 button {
   background-color: #007bff;
   color: #fff;

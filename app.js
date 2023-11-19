@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.set("view engine", "ejs");
 app.disable("x-powered-by");
+app.use(express.urlencoded({ extended: true }));
 
 // static resources
 app.use("/public", express.static(path.join(__dirname, "/public")));

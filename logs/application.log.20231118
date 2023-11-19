@@ -1,0 +1,28 @@
+[2023-11-18T11:10:18.841] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T11:11:13.215] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T11:11:35.370] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T11:15:52.650] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T11:26:01.345] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T13:13:43.910] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T13:32:00.955] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T13:40:02.168] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T13:41:15.073] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-18T13:43:04.029] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:42
+    40|           <label for="name" class="col-sm-3 col-form-label" style="text-align: center;">Username：</label>
+    41|           <div class="col-sm-9">
+ >> 42|             <input type="text" id="name" name="name" class="form-control" placeholder="Please enter your name" value="<%= name %>" required/>
+    43|           </div>
+    44|         </div>
+    45|         <div class="form-group row">
+
+name is not defined
+[2023-11-18T13:44:22.407] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:42
+    40|           <label for="name" class="col-sm-3 col-form-label" style="text-align: center;">Username：</label>
+    41|           <div class="col-sm-9">
+ >> 42|             <input type="text" id="name" name="name" class="form-control" placeholder="Please enter your name" value="<%= name %>" required/>
+    43|           </div>
+    44|         </div>
+    45|         <div class="form-group row">
+
+name is not defined
+[2023-11-18T13:45:51.715] [INFO] application - Application listening at http://127.0.0.1:3000
