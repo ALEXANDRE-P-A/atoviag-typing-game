@@ -72,6 +72,20 @@ button {
   border-radius: 5px;
   padding: 8px 8px 8px 4px;
   font-weight: 700;
+  min-width: 82px;
+}
+
+.btn_inside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ----- 正しくタイプされた場合のテキスト ----- */
@@ -82,6 +96,39 @@ button {
 /* ----- アクセス時のエフェクト ----- */
 #text_area.initial-effect {
   background-color: lightgreen;
+}
+
+.pass_input_area {
+  display: flex; 
+  justify-content: center;
+}
+
+.pass_input {
+  border-right: none;
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.visibility {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  border: 1px solid #ced4da;
+  display: flex;
+  font-size: 2em;
+  border-left: none;
+  border-radius: 0  .25rem .25rem 0;
+}
+
+.pass_btn_area {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pass_show_btn {
+  color: #ced4da;
+  padding: 6px;
 }
 
 @media screen and (max-width: 767px) {

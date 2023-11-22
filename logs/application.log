@@ -1,13 +1,8 @@
-[2023-11-19T21:31:14.468] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T21:36:03.982] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T21:39:37.324] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:12:17.150] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:35:03.705] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:39:17.531] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:39:54.294] [ERROR] application - Cannot destructure property 'name' of 'req.body' as it is undefined.
-[2023-11-19T22:42:20.110] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:42:36.947] [ERROR] application - Cannot destructure property 'name' of 'req.body' as it is undefined.
-[2023-11-19T22:49:57.871] [ERROR] application - Cannot destructure property 'name' of 'req.body' as it is undefined.
-[2023-11-19T22:50:09.874] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-19T22:50:25.405] [ERROR] application - Cannot destructure property 'name' of 'req.body' as it is undefined.
-[2023-11-19T22:57:07.633] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T09:19:19.758] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:09:30.653] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:12:56.800] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:47:55.827] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:50:21.986] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:59:35.821] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T10:59:53.347] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-22T11:06:58.257] [INFO] application - Application listening at http://127.0.0.1:3000
