@@ -46,76 +46,76 @@
           </div>
         <% } %>
         <div class="form-group row mb-3">
-          <label for="name" class="col-sm-4 col-form-label" style="text-align: center;">Username：</label>
+          <label for="name" class="col-sm-4 col-form-label">Username：</label>
           <div class="col-sm-8">
             <input type="text" id="name" name="name" class="form-control" placeholder="Please enter your name" value="<%= name %>" required/>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <label for="email" class="col-sm-4 col-form-label" style="text-align: center;">Email：</label>
+          <label for="email" class="col-sm-4 col-form-label">Email：</label>
           <div class="col-sm-8">
             <input type="email" id="email" name="email" class="form-control" placeholder="Please enter your email"  value="<%= email %>" required/>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <label for="reemail" class="col-sm-4 col-form-label" style="text-align: center;">Re-enter email：</label>
+          <label for="reemail" class="col-sm-4 col-form-label">Re-enter email：</label>
           <div class="col-sm-8">
             <input type="email" id="reemail" name="reemail" class="form-control" placeholder="Please re-enter your email"  value="<%= reemail %>" required/>
           </div>
         </div>
-        <div class="form-group row mb-3" style="display: flex; justify-content: space-between; align-items: center;">
-          <label for="password" class="col-sm-4 col-form-label" style="text-align: center;">New Password：</label>
+        <div class="form-group row mb-3 form_pass_area">
+          <label for="password" class="col-sm-4 col-form-label">New Password：</label>
           <div class="col-sm-8 pass_input_area">
             <input type="password" id="password" name="password" class="form-control pass_input" placeholder="Please enter a password" value="<%= password %>" required/>
-            <button style="border-left: none; border-radius: 0  .25rem .25rem 0;" class="visibility">
+            <button class="visibility">
               <span class="material-symbols-outlined pass_show_btn">visibility</span>
             </button>
           </div>
         </div>
-        <div class="form-group row mb-3" style="display: flex; justify-content: space-between; align-items: center;">
-          <label for="repassword" class="col-sm-4 col-form-label" style="text-align: center;">Re-enter new Password：</label>
+        <div class="form-group row mb-3 form_pass_area">
+          <label for="repassword" class="col-sm-4 col-form-label">Re-enter new Password：</label>
           <div class="col-sm-8 pass_input_area">
             <input type="password" id="repassword" name="repassword" class="form-control pass_input" placeholder="Please re-enter a password" value="<%= repassword %>" required/>
-            <button style="border-left: none; border-radius: 0  .25rem .25rem 0;" class="visibility">
+            <button class="visibility">
               <span class="material-symbols-outlined pass_show_btn">visibility</span>
             </button>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <label for="age" class="col-sm-4 col-form-label" style="text-align: center;">Age</label>
+          <label for="age" class="col-sm-4 col-form-label">Age</label>
           <div class="col-sm-8">
             <select class="form-control" id="age" name="age">
               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-              <option value="1" <%= (parseInt(age) === 1 ? "selected" : "") %>>～ 9</option>
-              <option value="2" <%= (parseInt(age) === 2 ? "selected" : "") %>>10 ～ 19</option>
-              <option value="3" <%= (parseInt(age) === 3 ? "selected" : "") %>>20 ～ 29</option>
-              <option value="4" <%= (parseInt(age) === 4 ? "selected" : "") %>>30 ～ 39</option>
-              <option value="5" <%= (parseInt(age) === 5 ? "selected" : "") %>>40 ～ 49</option>
-              <option value="6" <%= (parseInt(age) === 6 ? "selected" : "") %>>50 ～ 59</option>
-              <option value="7" <%= (parseInt(age) === 7 ? "selected" : "") %>>60 ～ 69</option>
-              <option value="8" <%= (parseInt(age) === 8 ? "selected" : "") %>>over 70</option>
+              <option value="under9" <%= (age === "under9" ? "selected" : "") %>>～ 9</option>
+              <option value="10to19" <%= (age === "10to19" ? "selected" : "") %>>10 ～ 19</option>
+              <option value="20to29" <%= (age === "20to29" ? "selected" : "") %>>20 ～ 29</option>
+              <option value="30to39" <%= (age === "30to39" ? "selected" : "") %>>30 ～ 39</option>
+              <option value="40to49" <%= (age === "40to49" ? "selected" : "") %>>40 ～ 49</option>
+              <option value="50to59" <%= (age === "50to59" ? "selected" : "") %>>50 ～ 59</option>
+              <option value="60to69" <%= (age === "60to69" ? "selected" : "") %>>60 ～ 69</option>
+              <option value="over70" <%= (age === "over70" ? "selected" : "") %>>over 70</option>
             </select>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <label for="region" class="col-sm-4 col-form-label" style="text-align: center;">Region</label>
+          <label for="region" class="col-sm-4 col-form-label">Region</label>
           <div class="col-sm-8">
             <select class="form-control" id="region" name="region">
-              <option value="0" <%= (parseInt(region) === 0 ? 'selected' : '') %>>Click and select your region</option>
-              <option value="1" <%= (parseInt(region) === 1 ? 'selected' : '') %>>Asia</option>
-              <option value="2" <%= (parseInt(region) === 2 ? 'selected' : '') %>>West Asia</option>
-              <option value="3" <%= (parseInt(region) === 3 ? 'selected' : '') %>>Central Asia</option>
-              <option value="4" <%= (parseInt(region) === 4 ? 'selected' : '') %>>Eastern Europe</option>
-              <option value="5" <%= (parseInt(region) === 5 ? 'selected' : '') %>>Europe</option>
-              <option value="6" <%= (parseInt(region) === 6 ? 'selected' : '') %>>Mediterranean</option>
-              <option value="7" <%= (parseInt(region) === 7 ? 'selected' : '') %>>West and Central Africa</option>
-              <option value="8" <%= (parseInt(region) === 8 ? 'selected' : '') %>>Eastern and Southern Africa</option>
-              <option value="9" <%= (parseInt(region) === 9 ? 'selected' : '') %>>Mexico, Central America and the Caribbean</option>
-              <option value="10" <%= (parseInt(region) === 10 ? 'selected' : '') %>>South America</option>
-              <option value="11" <%= (parseInt(region) === 11 ? 'selected' : '') %>>Washington D.C. Office</option>
-              <option value="12" <%= (parseInt(region) === 12 ? 'selected' : '') %>>Oceania</option>
+              <option value="0" <%= (parseInt(region) === 0 ? "selected" : "") %>>Click and select your region</option>
+              <option value="asia" <%= (region === "asia" ? "selected" : '') %>>Asia</option>
+              <option value="westasia" <%= (region === "westasia" ? "selected" : "") %>>West Asia</option>
+              <option value="centralasia" <%= (region === "centralasia" ? "selected" : "") %>>Central Asia</option>
+              <option value="easterneurope" <%= (region === "easterneurope" ? "selected" : "") %>>Eastern Europe</option>
+              <option value="europe" <%= (region === "europe" ? "selected" : "") %>>Europe</option>
+              <option value="mediterranean" <%= (region === "mediterranean" ? "selected" : "") %>>Mediterranean</option>
+              <option value="westandcentralafrica" <%= (region === "westandcentralafrica" ? "selected" : "") %>>West and Central Africa</option>
+              <option value="easternandsouthernafrica" <%= (region === "easternandsouthernafrica" ? "selected" : "") %>>Eastern and Southern Africa</option>
+              <option value="mexicocentralamericaandcaribbean" <%= (region === "mexicocentralamericaandcaribbean" ? 'selected' : '') %>>Mexico, Central America and the Caribbean</option>
+              <option value="southamerica" <%= (region === "southamerica" ? "selected" : "") %>>South America</option>
+              <option value="washingtondcoffice" <%= (region === "washingtondcoffice" ? "selected" : "") %>>Washington D.C. Office</option>
+              <option value="oceania" <%= (region === "oceania" ? "selected" : "") %>>Oceania</option>
             </select>
-          </div>
+          </div>    
         </div>
         <div class="btn_field">
           <button type="submit">

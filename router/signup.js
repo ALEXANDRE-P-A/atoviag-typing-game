@@ -1,4 +1,5 @@
 const router = require("express").Router();
+// const { MySQLClient, sql } = require("../lib/database/client.js");
 
 router.get("/", (req, res) => {
   let error = "", name = "", email = "", reemail = "", password = "", repassword = "", age = 0, region = 0;
@@ -10,18 +11,18 @@ router.post("/", (req, res) => {
   res.render("./signup/signup.ejs", { error, name, email, reemail, password, repassword, age, region });
 });
 
-router.post("/confirm", (req, res) => {
+router.post("/confirm", async (req, res, next) => {
   let { name, email, reemail, password, repassword, age, region } = req.body;
   let error = {}, error_count = 0;
 
   if(email !== reemail){
     error_count++;
-    error.email = "Email does not match";
+    error.email = "Please check the E-mail address";
   }
 
   if(password !== repassword){
     error_count++;
-    error.password = "Password does not match";
+    error.password = "Please check the password";
   }
 
   
@@ -41,6 +42,10 @@ router.post("/confirm", (req, res) => {
     res.render("./signup/signup.ejs", { error, name, email, reemail, password, repassword, age, region });
 
   return;
+});
+
+router.post("/execute", async (req, res, next) => {
+  res.send("execute");
 });
 
 module.exports = router;
