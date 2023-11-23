@@ -50,11 +50,11 @@
             <input type="email" id="email" name="email" class="form-control" placeholder="Please enter your email"  value="<%= email %>" readonly/>
           </div>
         </div>
-        <div class="form-group row mb-3" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="form-group row mb-3 form_pass_area">
           <label for="password" class="col-sm-4 col-form-label">New Password：</label>
           <div class="col-sm-8 pass_input_area">
-            <input type="password" id="password" name="password" class="form-control pass_input" placeholder="Please enter a password" value="<%= password %>" readonly/>
-            <button style="border-left: none; border-radius: 0  .25rem .25rem 0;" class="visibility">
+            <input type="password" id="password" name="password" class="form-control pass_input" value="<%= password %>" readonly/>
+            <button class="visibility">
               <span class="material-symbols-outlined pass_show_btn">visibility</span>
             </button>
           </div>
