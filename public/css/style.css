@@ -144,6 +144,31 @@ label {
   padding: 6px;
 }
 
+.g-recaptcha {
+  height: 100px;
+  margin: 15px auto 0;
+  opacity: 1;
+  transition: 1s;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-recaptcha.hidden {
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+#submit_btn {
+  opacity: 1;
+}
+
+#submit_btn:disabled {
+  opacity: .5;
+}
+
 @media screen and (max-width: 767px) {
   body {
     width: 100%;
