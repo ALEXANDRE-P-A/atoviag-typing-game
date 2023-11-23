@@ -1,7 +1,7 @@
 const router = require("express").Router();
 // const { MySQLClient, sql } = require("../lib/database/client.js");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => { // csrfの入口
   let error = "", name = "", email = "", reemail = "", password = "", repassword = "", age = 0, region = 0;
   res.render("./signup/signup.ejs", { error, name, email, reemail, password, repassword, age, region });
 });
