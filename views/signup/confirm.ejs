@@ -1,35 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include("../_share/metadata.ejs") %>
   <title>Sign Up Confirmation</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- stylesheets -->
-  <link rel="stylesheet" type="text/css" href="/public/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
-  <!-- google icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Playfair+Display&family=Roboto+Condensed:wght@700&family=Roboto:wght@500&family=Tiro+Bangla&display=swap" rel="stylesheet">
+  <%- include("../_share/stylesheets.ejs") %>
 </head>
 <body>
-  <!-- ----- ヘッダー(ここから) ----- -->
-  <header>
-    <nav>
-      <a href="/">Atoviag Typing Game</a>
-      <a href="/signup">
-        <span class="btn_inside">
-          <span class="material-symbols-outlined">login</span>
-          <span class="btn_text">&nbsp;Sign Up</span>
-        </span>
-      </a>
-    </nav>
-  </header>
-  <!-- ----- ヘッダー(ここまで) ----- -->
+  <%- include("../_share/header.ejs") %>
 
   <!-- ----- メイン(ここから) ----- -->
   <main class="container">
@@ -37,7 +14,7 @@
       <h1>Confirm</h1>
     </div>
     <div class="row justify-content-center">
-      <form method="post" action="/signup/execute" class="col-sm-10 col-lg-8">
+      <form class="col-sm-10 col-lg-8">
         <div class="form-group row mb-3">
           <label for="name" class="col-sm-4 col-form-label">Username：</label>
           <div class="col-sm-8">
@@ -50,6 +27,7 @@
             <input type="email" id="email" name="email" class="form-control" placeholder="Please enter your email"  value="<%= email %>" readonly/>
           </div>
         </div>
+        <input type="hidden" name="reemail" value="<%= reemail %>">
         <div class="form-group row mb-3 form_pass_area">
           <label for="password" class="col-sm-4 col-form-label">New Password：</label>
           <div class="col-sm-8 pass_input_area">
@@ -59,6 +37,7 @@
             </button>
           </div>
         </div>
+        <input type="hidden" name="repassword" value="<%= repassword %>">
         <div class="form-group row mb-3">
           <label for="age" class="col-sm-4 col-form-label">Age</label>
           <div class="col-sm-8">
@@ -73,14 +52,14 @@
         </div>
         <div class="btn_field">
 
-          <button type="submit">
+          <button id="back_btn" type="submit" data-method="post" data-action="/signup">
             <span class="btn_inside">
               <span class="material-symbols-outlined">arrow_back</span>
               <span class="btn_text">&nbsp;Back</span>
             </span>
           </button>
 
-          <button type="submit">
+          <button id="execute_btn" type="submit" data-method="post" data-action="/signup/execute">
             <span class="btn_inside">
               <span class="material-symbols-outlined">app_registration</span>
               <span class="btn_text">&nbsp;Register</span>
@@ -93,37 +72,12 @@
   </main>
   <!-- ----- メイン(ここまで) ----- -->
 
-  <!-- ----- フッター(ここから) ----- -->
-  <footer class="text-muted mt-5">
-    <div class="container">
-      <div class="row pt-5 pb-3">
-        <div class="col-sm-12 text-center">
-          <p>&copy; 2023 Atoviag Typing Game All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ----- フッター(ここまで) ----- -->
+  <%- include("../_share/footer.ejs") %>
+  <%- include("../_share/javascripts.ejs") %>
+  <!-- submit button activation -->
+  <script type="text/javascript" src="/public/js/passview.confirm.js"></script>
 
-  <!-- Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  <script>
-    const visibilityBtn = document.querySelector(".visibility");
-    const passInput = document.querySelector("input[type='password']");
-    const passShowBtn = document.querySelector(".pass_show_btn");
-
-    visibilityBtn.addEventListener("click", e => {
-      e.preventDefault();
-      if(passInput.type == "password"){
-        passInput.type = "text";
-        passShowBtn.textContent = "hide_source";
-      } else {
-        passInput.type = "password";
-        passShowBtn.textContent = "visibility";
-      }
-    });
-  </script>
+  <!-- back/execute button action -->
+  <script type="text/javascript" src="/public/js/back.execute.btn.action.js"></script>
 </body>
 </html>

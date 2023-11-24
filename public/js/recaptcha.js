@@ -24,6 +24,9 @@ let checkField = _ => {
     recaptchaField.classList.add("hidden");
 };
 
+/* ----- イベントの発火(初期画面) ----- */
+checkField();
+
 /* ----- イベントリスナーの設定 ----- */
 nameInput.addEventListener("input", checkField);
 emailInput.addEventListener("input", checkField);

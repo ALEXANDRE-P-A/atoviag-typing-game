@@ -1,210 +1,71 @@
-[2023-11-23T00:01:23.631] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:03:46.755] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:04:12.655] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === 0 ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
+[2023-11-24T10:48:57.140] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:50:50.607] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:52:28.081] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:54:25.783] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:54:58.720] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:57:39.938] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:01:17.133] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:02:53.809] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:04:55.918] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:09:50.520] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:10:11.288] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:10:53.060] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:12:08.035] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:13:02.917] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:13:37.380] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:14:19.665] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:14:53.586] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:15:34.571] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:50:35.588] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:50:37.894] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.068] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.085] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.086] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:52:39.914] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:54:48.243] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:57:23.805] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:00:12.657] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:02:27.212] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:03:17.216] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:06:13.614] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:07:35.453] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:08:06.584] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:08:53.169] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:10:22.885] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:12:08.809] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:14:51.112] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:17:55.531] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:18:21.456] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\confirm.ejs:53
+    51|           </div>
+    52|         </div>
+ >> 53|         <input type="hidden" name="reemail" value="<%= reemail %>">
+    54|         <div class="form-group row mb-3 form_pass_area">
+    55|           <label for="password" class="col-sm-4 col-form-label">New Password：</label>
+    56|           <div class="col-sm-8 pass_input_area">
 
-results is not defined
-[2023-11-23T00:07:39.429] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:07:57.699] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === 0 ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:11:01.370] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:11:13.660] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:14:11.232] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:14:46.916] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:15:40.252] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:15:58.572] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:16:15.954] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:17:04.227] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:17:15.420] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T00:19:31.749] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T00:19:43.608] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>"  ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:32:42.052] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:33:01.362] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:35:33.967] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:35:45.264] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:37:55.733] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:38:08.021] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:39:43.316] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:40:18.362] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:41:12.187] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:41:16.235] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:42:00.817] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:42:14.182] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:43:02.175] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:43:15.295] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% for(let item of results){ %>
-    91|                 <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    92|               <% } %>
-    93| 
-
-results is not defined
-[2023-11-23T10:44:23.688] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:44:37.027] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% if(results){ %>
-    91|                 <% for(let item of results){ %>
-    92|                   <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    93|                 <% } %>
-
-results is not defined
-[2023-11-23T10:45:49.781] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:45:53.464] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:96
-    94|               <% } %>
-    95| 
- >> 96|               <% if(baka){ %>
-    97|                 <% for(let item of baka){ %>
-    98|                   <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    99|                 <% } %>
-
-baka is not defined
-[2023-11-23T10:48:15.015] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T10:48:28.198] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs:90
-    88|               <option value="0" <%= (parseInt(age) === 0 ? "selected" : "") %>>Click and select your age</option>
-    89|               
- >> 90|               <% if(results){ %>
-    91|                 <% for(let item of results){ %>
-    92|                   <option value="<%= item.id %>" <%= (parseInt(age) === item.id ? "selected" : "") %> ><%= item.age %></option>
-    93|                 <% } %>
-
-results is not defined
-[2023-11-23T10:49:49.831] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:09:16.639] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:11:26.594] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:13:30.532] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:13:36.276] [ERROR] application - Unexpected number in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\signup.ejs while compiling ejs
+reemail is not defined
+[2023-11-24T16:20:34.037] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:22:28.175] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:24:46.485] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:29:18.806] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:34:46.944] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:40:08.888] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:40:10.682] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
 
 If the above error is not helpful, you may want to try EJS-Lint:
 https://github.com/RyanZim/EJS-Lint
 Or, if you meant to create an async function, pass `async: true` as an option.
-[2023-11-23T11:15:23.566] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:17:55.741] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:28:39.550] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:39:08.491] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T11:45:59.977] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T12:26:39.493] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:09:11.513] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:36:41.286] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:46:35.627] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:51:23.660] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:52:53.956] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:54:33.551] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:56:33.846] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T15:57:18.463] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T16:10:40.096] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T16:14:36.836] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T16:18:59.778] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T18:34:31.122] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T19:05:28.073] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T19:06:13.437] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-23T19:20:03.846] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:41:01.483] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:41:03.310] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+[2023-11-24T16:43:48.797] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:43:50.940] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+[2023-11-24T16:44:23.781] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:44:45.131] [INFO] application - Application listening at http://127.0.0.1:3000
