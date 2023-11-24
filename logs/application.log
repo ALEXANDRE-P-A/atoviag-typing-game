@@ -69,3 +69,16 @@ https://github.com/RyanZim/EJS-Lint
 Or, if you meant to create an async function, pass `async: true` as an option.
 [2023-11-24T16:44:23.781] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-24T16:44:45.131] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:50:51.231] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:22:09.829] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:25:03.802] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:25:52.893] [ERROR] application - ER_NO_SUCH_TABLE: Table 'rfirc6zkijipvhmp.users' doesn't exist
+[2023-11-24T19:27:04.681] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:37:25.804] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:39:11.617] [ERROR] application - Invalid Token...
+[2023-11-24T22:35:37.126] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T22:37:01.218] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:42:47.341] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T22:43:19.033] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:44:23.292] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:45:53.926] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"

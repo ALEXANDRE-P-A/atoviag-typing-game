@@ -1,5 +1,5 @@
 const router = require("express").Router();
-// const { MySQLClient, sql } = require("../lib/database/client.js");
+const { MySQLClient, sql } = require("../lib/database/client.js");
 const tokens = new (require("csrf"))();
 
 router.get("/", async (req, res) => { // csrfの入口
@@ -52,8 +52,38 @@ router.post("/confirm", async (req, res, next) => {
   return;
 });
 
-router.post("/execute", async (req, res, next) => {
-  res.render("./signup/execute.ejs");
+router.post("/execute", async (req, res, next) => { // トークンの確認(csrfの出口)、最後に破棄
+  let secret = req.session.atoviag_csrf; // セッションからsecretを取り出す
+  let token = req.cookies.atoviag_csrf;  // クッキーからtokenを取り出す
+
+  if(tokens.verify(secret, token) === false){ // secretとtokenが正しいかを確認(不正なアクセスの可能性を意味する)
+    next(new Error("Invalid Token..."));
+    return;
+  }
+
+  let { name, email, password, age, region } = req.body;
+  console.log(name, email, password, age, region);
+
+  try {
+    await MySQLClient.executeQuery(
+      await sql("INSERT_NEW_USER"),
+      [name, email, password, age, region]
+    );
+  } catch(err) {
+    next(err);
+  }
+
+  console.log(req.session.atoviag_csrf);
+  console.log(req.cookies.atoviag_csrf);
+
+  delete req.session.atoviag_csrf; // 正常に操作できた場合はセッションを破棄する
+  res.clearCookie("atoviag_csrf"); // 正常に操作できた場合はクッキー破棄を指示
+
+  res.redirect(`/signup/completed?email=${email}`);
+});
+
+router.get("/completed", (req, res) => {
+  res.render("./signup/completed.ejs", { email: req.query.email});
 });
 
 module.exports = router;
