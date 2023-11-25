@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { MySQLClient, sql } = require("../lib/database/client.js");
 const tokens = new (require("csrf"))();
+const { mail } = require("../lib/mailer/certify_email.js");
+
 
 router.get("/", async (req, res) => { // csrfの入口
 
@@ -62,19 +64,25 @@ router.post("/execute", async (req, res, next) => { // トークンの確認(csr
   }
 
   let { name, email, password, age, region } = req.body;
-  console.log(name, email, password, age, region);
 
   try {
     await MySQLClient.executeQuery(
       await sql("INSERT_NEW_USER"),
-      [name, email, password, age, region]
+      [
+        name,
+        email,
+        password,
+        age,
+        region,
+        req.cookies.atoviag_csrf,
+        req.session.atoviag_csrf
+      ]
     );
   } catch(err) {
     next(err);
   }
 
-  console.log(req.session.atoviag_csrf);
-  console.log(req.cookies.atoviag_csrf);
+  mail(email, req.cookies.atoviag_csrf, req.session.atoviag_csrf, req.get("host"));  
 
   delete req.session.atoviag_csrf; // 正常に操作できた場合はセッションを破棄する
   res.clearCookie("atoviag_csrf"); // 正常に操作できた場合はクッキー破棄を指示

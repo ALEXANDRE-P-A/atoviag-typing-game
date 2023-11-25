@@ -211,4 +211,8 @@ label {
   ::placeholder, select {
     text-align: center;
   }
+
+  option {
+    text-align: center;
+  }
 }

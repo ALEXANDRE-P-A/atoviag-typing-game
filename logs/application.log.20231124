@@ -1,0 +1,85 @@
+[2023-11-24T10:48:57.140] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:50:50.607] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:52:28.081] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:54:25.783] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:54:58.720] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T10:57:39.938] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:01:17.133] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:02:53.809] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:04:55.918] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:09:50.520] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:10:11.288] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:10:53.060] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:12:08.035] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:13:02.917] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:13:37.380] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:14:19.665] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:14:53.586] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T11:15:34.571] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:50:35.588] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:50:37.894] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.068] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.085] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:50:38.086] [ERROR] application - getaddrinfo ENOTFOUND iu51mf0q32fkhfpl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+[2023-11-24T15:52:39.914] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:54:48.243] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T15:57:23.805] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:00:12.657] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:02:27.212] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:03:17.216] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:06:13.614] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:07:35.453] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:08:06.584] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:08:53.169] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:10:22.885] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:12:08.809] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:14:51.112] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:17:55.531] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:18:21.456] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signup\confirm.ejs:53
+    51|           </div>
+    52|         </div>
+ >> 53|         <input type="hidden" name="reemail" value="<%= reemail %>">
+    54|         <div class="form-group row mb-3 form_pass_area">
+    55|           <label for="password" class="col-sm-4 col-form-label">New Password：</label>
+    56|           <div class="col-sm-8 pass_input_area">
+
+reemail is not defined
+[2023-11-24T16:20:34.037] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:22:28.175] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:24:46.485] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:29:18.806] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:34:46.944] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:40:08.888] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:40:10.682] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+[2023-11-24T16:41:01.483] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:41:03.310] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+[2023-11-24T16:43:48.797] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:43:50.940] [ERROR] application - Invalid or unexpected token in C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+[2023-11-24T16:44:23.781] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:44:45.131] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T16:50:51.231] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:22:09.829] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:25:03.802] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:25:52.893] [ERROR] application - ER_NO_SUCH_TABLE: Table 'rfirc6zkijipvhmp.users' doesn't exist
+[2023-11-24T19:27:04.681] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:37:25.804] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T19:39:11.617] [ERROR] application - Invalid Token...
+[2023-11-24T22:35:37.126] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T22:37:01.218] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:42:47.341] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-24T22:43:19.033] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:44:23.292] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:45:53.926] [ERROR] application - Failed to lookup view "./signup/execute.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-24T22:46:34.966] [INFO] application - Application listening at http://127.0.0.1:3000

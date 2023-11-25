@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <%- include("../_share/metadata.ejs") %>
-  <title>Check E-mail Box </title>
+  <title>Register Completed</title>
   <%- include("../_share/stylesheets.ejs") %>
 </head>
 <body>
   <%- include("../_share/header.ejs") %>
   <div class="container">
     <div class="border-bottom my-5">
-      <h1 class="">Check your E-mail Box</h1>
+      <h1 class="">Register Completed</h1>
     </div>
-    <div class="alert alert-success my-5 text-center">Please access the link attached in the message sent to <%= email %></div>
+    <div class="alert alert-success my-5 text-center">The registration is completed.</div>
+    <div class="text-center my-5">
+      <a class="btn btn-outline-primary" href="/login">Login Page</a>
+    </div>
   </div>
   <%- include("../_share/footer.ejs") %>
   <%- include("../_share/javascripts.ejs") %>
