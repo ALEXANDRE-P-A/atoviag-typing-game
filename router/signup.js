@@ -25,6 +25,19 @@ router.post("/confirm", async (req, res, next) => {
   let { name, email, reemail, password, repassword, age, region } = req.body;
   let error = {}, error_count = 0;
 
+  try {
+    const result = await MySQLClient.executeQuery(
+      await sql("CHECK_IF_EMAIL_EXISTS"),
+      [email]
+    );
+    if(result[0].count != 0){
+      error_count++;
+      error.duplicate = "This Email address is already used for other account";
+    }
+  } catch(err) {
+    next(err);
+  }
+
   if(email !== reemail){
     error_count++;
     error.email = "Please check the E-mail address";
@@ -35,7 +48,6 @@ router.post("/confirm", async (req, res, next) => {
     error.password = "Please check the password";
   }
 
-  
   if(age == 0){
     error_count++;
     error.age = "Please select your age";

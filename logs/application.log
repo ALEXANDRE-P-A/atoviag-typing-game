@@ -1,26 +1,10 @@
-[2023-11-25T16:53:13.877] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T16:59:07.145] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:05:21.177] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:07:19.265] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:10:10.213] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:12:48.616] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:37:45.206] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T17:51:30.044] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:03:46.912] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:13:27.377] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:36:14.548] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:36:19.612] [ERROR] application - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE cookie = 'JGcTNBIE-gObu50W7sS-Xy6NF9i_k7OkaqJw' AND session = '8ULG6unzOZc' at line 1
-[2023-11-25T18:39:39.768] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:40:07.222] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:40:43.841] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T18:41:54.942] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T19:22:37.137] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T19:22:40.559] [ERROR] application - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE cookie = 'JGcTNBIE-gObu50W7sS-Xy6NF9i_k7OkaqJw' AND session = '8ULG6unzOZc' at line 1
-[2023-11-25T19:25:51.533] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T19:32:54.049] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:14:37.983] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:27:38.296] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:33:39.551] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:36:08.481] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:37:22.617] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-11-25T23:49:15.916] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:19:07.338] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:34:46.512] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:36:38.733] [ERROR] application - ER_DUP_ENTRY: Duplicate entry 'homem_na_estrada@msn.com' for key 'users.email'
+[2023-11-26T00:38:44.842] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:39:05.657] [ERROR] application - ER_DUP_ENTRY: Duplicate entry 'homem_na_estrada@msn.com' for key 'users.email'
+[2023-11-26T00:40:01.147] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:40:26.546] [ERROR] application - ER_DUP_ENTRY: Duplicate entry 'homem_na_estrada@msn.com' for key 'users.email'
+[2023-11-26T00:41:42.599] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:42:58.033] [ERROR] application - ER_DUP_ENTRY: Duplicate entry 'homem_na_estrada@msn.com' for key 'users.email'
+[2023-11-26T00:44:38.596] [INFO] application - Application listening at http://127.0.0.1:3000
