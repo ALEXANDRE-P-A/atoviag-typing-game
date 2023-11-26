@@ -9,6 +9,8 @@ const accesslogger = require("./lib/log/accesslogger.js");
 const cookie = require("cookie-parser");
 const session = require("express-session");
 const MySqlStore = require("express-mysql-session")(session);
+const accesscontrol = require("./lib/security/accesscontrol.js");
+const flash = require("connect-flash");
 
 // express settings
 const app = express();
@@ -31,6 +33,10 @@ app.use(session({
   saveUninitialized: true,
   name: "atoviag_sid"
 }));
+app.use(flash());
+
+// passport initialization
+app.use(...accesscontrol.initialize());
 
 // static resources
 app.use("/public", express.static(path.join(__dirname, "/public")));

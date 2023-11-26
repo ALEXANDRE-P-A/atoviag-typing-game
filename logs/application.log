@@ -8,3 +8,32 @@
 [2023-11-26T00:41:42.599] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-26T00:42:58.033] [ERROR] application - ER_DUP_ENTRY: Duplicate entry 'homem_na_estrada@msn.com' for key 'users.email'
 [2023-11-26T00:44:38.596] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T00:56:30.488] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T11:52:34.421] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:09:32.440] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:09:42.077] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:10:41.353] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:11:04.170] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:11:11.978] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:27:06.092] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:29:55.545] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:29:57.268] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:30:39.596] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:30:41.077] [ERROR] application - Failed to lookup view "./signin/signin.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\typing_game\views"
+[2023-11-26T15:31:34.714] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:31:43.333] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signin\signin.ejs:31
+    29|           <label for="reemail" class="col-sm-4 col-form-label">Email：</label>
+    30|           <div class="col-sm-8">
+ >> 31|             <input type="email" id="email" name="reemail" class="form-control" placeholder="Please re-enter your email"  value="<%= reemail %>" required/>
+    32|           </div>
+    33|         </div>
+    34|         <div class="form-group row mb-3 form_pass_area">
+
+reemail is not defined
+[2023-11-26T15:32:22.383] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:43:05.258] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:44:17.803] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:46:02.383] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:46:51.594] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:49:26.795] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T15:52:39.453] [INFO] application - Application listening at http://127.0.0.1:3000
