@@ -1,6 +1,8 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
+  if(req.user)
+    console.log(req.user.certification);
   res.render("./index.ejs");
 });
 

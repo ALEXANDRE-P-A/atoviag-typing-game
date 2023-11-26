@@ -61,3 +61,7 @@ reemail is not defined
 [2023-11-26T19:12:34.833] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-26T19:14:13.758] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-26T19:14:49.145] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T22:18:49.399] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T23:25:31.352] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T23:26:05.747] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T23:26:07.454] [ERROR] application - Cannot read properties of undefined (reading 'certification')
