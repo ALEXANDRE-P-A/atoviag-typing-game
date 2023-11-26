@@ -37,3 +37,27 @@ reemail is not defined
 [2023-11-26T15:46:51.594] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-26T15:49:26.795] [INFO] application - Application listening at http://127.0.0.1:3000
 [2023-11-26T15:52:39.453] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T16:04:53.558] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:28:57.981] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:33:33.570] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:34:45.286] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:38:36.660] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:38:51.826] [ERROR] application - Cannot set properties of undefined (setting 'user')
+[2023-11-26T18:39:38.427] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:46:04.275] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:52:30.951] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T18:57:30.496] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:03:54.046] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:04:25.765] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:05:23.154] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:07:14.378] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:07:15.856] [ERROR] application - Cannot read properties of undefined (reading 'user')
+[2023-11-26T19:07:30.580] [ERROR] application - Cannot read properties of undefined (reading 'user')
+[2023-11-26T19:07:58.535] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:08:28.344] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:08:55.322] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:09:35.748] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:11:19.730] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:12:34.833] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:14:13.758] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-26T19:14:49.145] [INFO] application - Application listening at http://127.0.0.1:3000

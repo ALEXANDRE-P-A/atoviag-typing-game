@@ -22,26 +22,28 @@
     <!-- ----- ボタン領域(ここから) ----- -->
     <section class="btn_field">
 
-      <!-- スタート及びサインインボタン -->
-      <button onclick="location.href='/signin'">
-        <span class="btn_inside">
-          <span class="material-symbols-outlined">login</span>
-          <span class="btn_text">&nbsp;Sign In</span>
-        </span>
-      </button>
+      <% if(locals.user) { %>
+        <!-- キータイピングタイプボタン -->
+        <button style="display: flex; flex-direction: column; align-items: center;">
+          <span class="material-symbols-outlined">keyboard</span>
+          <span style="margin-top: 5px;">&nbsp;keypress type</span>
+        </button>
 
-      <!-- キータイピングタイプボタン -->
-      <!-- <button style="display: flex; flex-direction: column; align-items: center;">
-        <span class="material-symbols-outlined">keyboard</span>
-        <span style="margin-top: 5px;">&nbsp;keypress type</span>
-      </button> -->
-
-      <!-- テキスト入力タイプボタン -->
-      <!-- <button style="display: flex; flex-direction: column; align-items: center;">
-        <span class="material-symbols-outlined">text_fields</span>
-        <span style="margin-top: 5px;">&nbsp;text input type</span>
-      </button> -->
-
+        <!-- テキスト入力タイプボタン -->
+        <button style="display: flex; flex-direction: column; align-items: center;">
+          <span class="material-symbols-outlined">text_fields</span>
+          <span style="margin-top: 5px;">&nbsp;text input type</span>
+        </button>
+      <% } else { %>
+        <!-- スタート及びサインインボタン -->
+        <button onclick="location.href='/signin'">
+          <span class="btn_inside">
+            <span class="material-symbols-outlined">login</span>
+            <span class="btn_text">&nbsp;Sign In</span>
+          </span>
+        </button>
+      <% } %>
+      
       <!-- スタートボタン -->
       <!-- <button style="display: flex; flex-direction: column; align-items: center; padding: 5px 10px;">
         <span class="material-symbols-outlined">play_arrow</span>
