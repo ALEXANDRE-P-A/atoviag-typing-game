@@ -70,3 +70,36 @@ Instead change the require of index.js in C:\Users\alexa\OneDrive\デスクト�
 [2023-11-27T19:44:14.509] [ERROR] application - Cannot set headers after they are sent to the client
 [2023-11-27T19:44:16.814] [ERROR] application - Cannot set headers after they are sent to the client
 [2023-11-27T19:44:50.667] [ERROR] application - Cannot set headers after they are sent to the client
+[2023-11-27T20:08:15.849] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-27T20:11:54.040] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-27T20:11:59.602] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs:25
+    23|     <section class="btn_field">
+    24| 
+ >> 25|       <% if(locals.user && locals.user.certification) { %>
+    26|         <!-- キータイピングタイプボタン -->
+    27|         <button style="display: flex; flex-direction: column; align-items: center;">
+    28|           <span class="material-symbols-outlined">keyboard</span>
+
+Cannot read properties of undefined (reading 'certification')
+[2023-11-27T20:13:23.817] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-27T20:13:25.508] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs:25
+    23|     <section class="btn_field">
+    24| 
+ >> 25|       <% if(locals.user && locals.user.certification) { %>
+    26|         <!-- キータイピングタイプボタン -->
+    27|         <button style="display: flex; flex-direction: column; align-items: center;">
+    28|           <span class="material-symbols-outlined">keyboard</span>
+
+Cannot read properties of undefined (reading 'certification')
+[2023-11-27T20:15:15.586] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-27T20:16:02.192] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-27T20:16:05.800] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\index.ejs:25
+    23|     <section class="btn_field">
+    24| 
+ >> 25|       <% if(locals.user && locals.user.certification) { %>
+    26|         <!-- キータイピングタイプボタン -->
+    27|         <button style="display: flex; flex-direction: column; align-items: center;">
+    28|           <span class="material-symbols-outlined">keyboard</span>
+
+Cannot read properties of undefined (reading 'certification')
+[2023-11-27T20:17:03.753] [INFO] application - Application listening at http://127.0.0.1:3000
