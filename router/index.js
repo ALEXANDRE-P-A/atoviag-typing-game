@@ -4,6 +4,7 @@ router.get("/", (req, res) => {
   if(req.user){
     if(req.user.certification == null){
       res.render("./signup/completed.ejs", { email: req.user.email, date: req.user.created_date });
+      return;
     }
   }
 
