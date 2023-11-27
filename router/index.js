@@ -1,8 +1,12 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  if(req.user)
-    console.log(req.user.certification);
+  if(req.user){
+    if(req.user.certification === null){
+      res.render("./signup/completed.ejs", { email: req.user.email, date: req.user.created_date });
+    }
+  }
+
   res.render("./index.ejs");
 });
 

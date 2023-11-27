@@ -21,6 +21,12 @@ app.set("view engine", "ejs");
 app.disable("x-powered-by");
 app.use(express.urlencoded({ extended: true }));
 
+// expose global method to view engine
+app.use((req, res, next) => {
+  res.locals.moment = require("moment");
+  next();
+});
+
 // set middleware for cookie
 app.use(cookie());
 app.use(session({

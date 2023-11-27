@@ -103,7 +103,7 @@ router.post("/execute", async (req, res, next) => { // トークンの確認(csr
 });
 
 router.get("/completed", (req, res) => {
-  res.render("./signup/completed.ejs", { email: req.query.email});
+  res.render("./signup/completed.ejs", { email: req.query.email, date: new Date() });
 });
 
 module.exports = router;
