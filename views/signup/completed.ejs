@@ -11,7 +11,7 @@
     <div class="border-bottom my-5">
       <h1 class="">Check your E-mail Box</h1>
     </div>
-    <div class="alert alert-success my-5 text-center">Please access the link attached in the message sent to <%= email %> at <%= date %></div>
+    <div class="alert alert-success my-5 text-center">Please access the link attached in the message sent to <%= email %> at <%= moment(date).format('MMMM Do YYYY, h:mm:ss a') %></div>
   </div>
   <%- include("../_share/footer.ejs") %>
   <%- include("../_share/javascripts.ejs") %>
