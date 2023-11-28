@@ -21,6 +21,7 @@ router.get("/", async (req, res, next) => {
         [req.query.cookie, req.query.session]
       );
     }
+
   } catch(err) {
     next(err);
   }

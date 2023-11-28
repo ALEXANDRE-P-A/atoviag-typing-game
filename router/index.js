@@ -1,12 +1,24 @@
 const router = require("express").Router();
+const { MySQLClient, sql } = require("../lib/database/client.js");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res, next) => {
   if(req.user){
-    if(req.user.certification == null){
-      res.render("./signup/completed.ejs", { email: req.user.email, date: req.user.created_date });
-      return;
+    try {
+      const result = await MySQLClient.executeQuery(
+        await sql("SELECT_USER_BY_EMAIL"),
+        [req.user.email]
+      );
+      if(result[0].certifyAt == null){
+        res.render("./signup/completed.ejs", { email: req.user.email, date: req.user.created_date });
+        return;
+      }
+    } catch(err) {
+      console.log(err);
+      next();
     }
   }
+
+  console.log(req.user);
 
   res.render("./index.ejs");
 });
