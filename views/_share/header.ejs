@@ -3,7 +3,12 @@
   <nav>
     <% if(locals.user){ %>
       <%= (locals.user.name || "（表示名未設定）") %>
-      <a href="/signin/logout">Sign Out</a>
+      <a href="/signin/logout">
+        <span class="btn_inside">
+          <span class="btn_text">&nbsp;Sign Out</span>
+          <span class="material-symbols-outlined">logout</span>
+        </span>
+      </a>
     <% } else { %>
     <a href="/">Atoviag Typing Game</a>
     <a href="/signup">
