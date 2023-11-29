@@ -6,7 +6,7 @@ const {
 } = require("../lib/security/accesscontrol.js");
 
 router.get("/", (req, res) => {
-  res.render("./signin/signin.ejs");
+  res.render("./signin/signin.ejs", { message: req.flash("message") });
 });
 
 router.post("/", authenticate());

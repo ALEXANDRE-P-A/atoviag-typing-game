@@ -1,1 +1,11 @@
-[2023-11-29T23:24:49.180] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-30T00:06:18.438] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-30T00:06:23.180] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\signin\signin.ejs:58
+    56|           </button>
+    57|         </div>
+ >> 58|         <% if (message && message.length !== 0) { %>
+    59|           <div class="alert alert-danger"><%= message %></div>
+    60|         <% } %>
+    61|       </form>
+
+message is not defined
+[2023-11-30T00:08:56.607] [INFO] application - Application listening at http://127.0.0.1:3000
