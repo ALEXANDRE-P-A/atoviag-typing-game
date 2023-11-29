@@ -1,11 +1,11 @@
 <!-- ----- ヘッダー(ここから) ----- -->
 <header>
   <nav>
-    <a href="/">Atoviag Typing Game</a>
-
     <% if(locals.user){ %>
-      <%= (locals.user.name || "Display name not set") %>
+      <%= (locals.user.name || "（表示名未設定）") %>
+      <a href="/signin/logout">Sign Out</a>
     <% } else { %>
+    <a href="/">Atoviag Typing Game</a>
     <a href="/signup">
       <span class="btn_inside">
         <span class="material-symbols-outlined">login</span>

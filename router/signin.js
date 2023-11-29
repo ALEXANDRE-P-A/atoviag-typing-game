@@ -11,4 +11,13 @@ router.get("/", (req, res) => {
 
 router.post("/", authenticate());
 
+router.get("/logout", (req, res, next) => {
+  req.logout(err => {
+    if(err)
+      return next();
+    res.redirect("/");
+    return;
+  });
+});
+
 module.exports = router;

@@ -1,0 +1,20 @@
+[2023-11-28T21:07:07.620] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:13:10.120] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:14:12.061] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:15:07.134] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:17:18.592] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:21:08.497] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:25:34.326] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T21:58:50.735] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T22:36:23.295] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T22:50:17.097] [ERROR] application - req#logout requires a callback function
+[2023-11-28T22:52:35.501] [ERROR] application - req#logout requires a callback function
+[2023-11-28T22:53:10.751] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T22:53:14.980] [ERROR] application - req#logout requires a callback function
+[2023-11-28T22:53:44.325] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T22:53:49.266] [ERROR] application - req#logout requires a callback function
+[2023-11-28T22:54:01.567] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T22:54:04.160] [ERROR] application - req#logout requires a callback function
+[2023-11-28T23:51:30.035] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-11-28T23:51:51.885] [ERROR] application - req#logout requires a callback function
+[2023-11-28T23:54:55.806] [INFO] application - Application listening at http://127.0.0.1:3000
