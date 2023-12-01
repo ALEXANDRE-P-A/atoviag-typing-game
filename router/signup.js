@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const { MySQLClient, sql } = require("../lib/database/client.js");
 const tokens = new (require("csrf"))();
+const bcrypt = require("bcrypt");
+
+const { MySQLClient, sql } = require("../lib/database/client.js");
 const { mail } = require("../lib/mailer/certify_email.js");
 
 
@@ -77,13 +79,19 @@ router.post("/execute", async (req, res, next) => { // トークンの確認(csr
 
   let { name, email, password, age, region } = req.body;
 
+  /* ----- hashing password(starts here) ----- */
+  let salt = await bcrypt.genSalt(10, "b");
+  let hashedPassword = await bcrypt.hash(password, salt);
+  console.log(hashedPassword);
+  /* ----- hashing password(ends here) ----- */
+
   try {
     await MySQLClient.executeQuery(
       await sql("INSERT_NEW_USER"),
       [
         name,
         email,
-        password,
+        hashedPassword,
         age,
         region,
         req.cookies.atoviag_csrf,
