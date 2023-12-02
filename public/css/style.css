@@ -208,7 +208,13 @@ label {
     border-radius: 0;
   }
 
-  ::placeholder, select {
+  ::placeholder {
     text-align: center;
+  }
+
+  option {
+    width: 100%;
+    text-align: center;
+    
   }
 }
