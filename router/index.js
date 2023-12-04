@@ -24,5 +24,6 @@ router.get("/", async (req, res, next) => {
 router.use("/signup", require("./signup.js"));
 router.use("/certify", require("./certify.js"));
 router.use("/signin", require("./signin.js"));
+router.use("/passwordchange", require("./passwordchange.js"));
 
 module.exports = router;

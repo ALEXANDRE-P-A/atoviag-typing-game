@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
   <%- include("../_share/metadata.ejs") %>
-  <title>Check E-mail Box </title>
+  <title>Sent mail with link </title>
   <%- include("../_share/stylesheets.ejs") %>
 </head>
 <body>
   <%- include("../_share/header.ejs") %>
   <div class="container">
     <div class="border-bottom my-5">
-      <h1 class="">Certify your account</h1>
+      <h1 class="">Check your E-mail Box</h1>
     </div>
     <div class="alert alert-success my-5 text-center" style="padding: 6px 12px;">Please access the link attached in the message sent to <%= email %> at <%= moment(date).add(540, "minutes").format('MMMM Do YYYY, h:mm:ss a') %></div>
   </div>

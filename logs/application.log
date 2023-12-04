@@ -1,59 +1,72 @@
-[2023-12-02T11:25:26.948] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:29:25.783] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:31:59.138] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:34:31.673] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:41:01.921] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:41:54.735] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:43:16.594] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:44:07.335] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:45:42.265] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:46:24.535] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:47:01.077] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:48:52.578] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:50:24.972] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T11:56:52.298] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T15:33:54.763] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T15:35:46.595] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T15:53:17.123] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T15:58:27.677] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:17:25.892] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:23:00.618] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:24:34.455] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:26:43.415] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:34:12.878] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:42:22.524] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:46:57.279] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:47:49.493] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T16:54:03.708] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T17:16:51.079] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T17:19:00.445] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T17:29:52.203] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T20:58:49.369] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:01:33.581] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:04:26.382] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:09:23.017] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:13:36.607] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:14:04.042] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:15:06.498] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:20:17.984] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:24:27.249] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:25:30.299] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:26:48.329] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:31:06.222] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:32:21.374] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:32:49.695] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:39:39.111] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:49:08.706] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:50:18.481] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:51:26.452] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:52:50.313] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:54:32.231] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:59:02.189] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T21:59:29.670] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:08:26.426] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:37:30.048] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:40:14.275] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:42:11.792] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:56:12.404] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:57:29.262] [INFO] application - Application listening at http://127.0.0.1:3000
-[2023-12-02T22:59:20.609] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T12:56:16.327] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:11:57.043] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:28:24.761] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:29:18.349] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:29:23.723] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\passwordchange\changeform.ejs:29
+    27|       <form method="post" action="/passwordchange/passwordconfirm" class="col-sm-10 col-lg-8">
+    28| 
+ >> 29|         <% if(message){ %>
+    30|           <div class="alert alert-primary text-center" style="padding: 6px 12px;"><%= message %></div>
+    31|         <% } else if(alert){ %>
+    32|           <div class="alert alert-danger text-center" style="padding: 6px 12px;"><%= alert %></div>
+
+message is not defined
+[2023-12-04T13:31:01.100] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:31:08.831] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\passwordchange\changeform.ejs:37
+    35|         <div class="form-group row mb-3 form_pass_area">
+    36|           <div class="col-sm-12 pass_input_area">
+ >> 37|             <input type="password" id="password" name="password" class="form-control pass_input" placeholder="password" value="<%= password %>" required/>
+    38|             <button class="visibility">
+    39|               <span class="material-symbols-outlined pass_show_btn">visibility</span>
+    40|             </button>
+
+password is not defined
+[2023-12-04T13:31:44.139] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:33:29.945] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T13:56:39.501] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T14:51:27.733] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T14:54:09.104] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T14:55:51.795] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T14:59:15.368] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T15:03:45.005] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\passwordchange\changeconfirm.ejs:2
+    1| <%= email %>
+ >> 2| <%= password %>
+    3| <%= repassword %>
+
+password is not defined
+[2023-12-04T15:50:00.988] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T15:56:47.258] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\passwordchange\changeconfirm.ejs:21
+    19|       <form method="post" action="/passwordchange/newpasswordconfirm" class="col-sm-10 col-lg-8">
+    20| 
+ >> 21|         <% if(message){ %>
+    22|           <div class="alert alert-primary text-center" style="padding: 6px 12px;"><%= message %></div>
+    23|         <% } else if(alert){ %>
+    24|           <div class="alert alert-danger text-center" style="padding: 6px 12px;"><%= alert %></div>
+
+message is not defined
+[2023-12-04T16:34:35.829] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T16:48:52.661] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T16:55:37.743] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T16:56:56.337] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T16:58:38.187] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:01:50.009] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:03:17.394] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:06:09.652] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:06:24.487] [ERROR] application - C:\Users\alexa\OneDrive\デスクトップ\typing_game\views\passwordchange\changeconfirm.ejs:38
+    36|         </div>
+    37|         
+ >> 38|         <input type="hidden" name="repassword" value="<%= repassword %>">
+    39| 
+    40|         <button id="back_btn" type="submit" data-method="post" data-action="/passwordchange/changeform">
+    41|           <span class="btn_inside">
+
+repassword is not defined
+[2023-12-04T17:09:54.528] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:16:04.857] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:19:57.119] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:23:25.501] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:35:21.269] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:38:23.507] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T17:51:19.396] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T18:01:56.289] [INFO] application - Application listening at http://127.0.0.1:3000
+[2023-12-04T18:20:05.435] [INFO] application - Application listening at http://127.0.0.1:3000

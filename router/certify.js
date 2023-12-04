@@ -20,8 +20,8 @@ router.get("/", async (req, res, next) => {
         await sql("CERTIFY_ACCT"),
         [req.query.cookie, req.query.session]
       );
-    }
 
+    }
   } catch(err) {
     next(err);
   }

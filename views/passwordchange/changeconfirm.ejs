@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../_share/metadata.ejs") %>
+  <%- include("../_share/stylesheets.ejs") %>
+  <title>New password conirm</title>
+</head>
+<body>
+  <%- include("../_share/header.ejs") %>
+  
+   <!-- ----- メイン(ここから) ----- -->
+   <main class="container">
+    <div class=" col-sm-10 col-lg-8 border-bottom mt-5 mb-3" style="margin: 0 auto;">
+      <h1>Change Password</h1>
+    </div>
+    <div class="row justify-content-center">
+      
+      <!-- ----- フォーム(ここから) ----- -->
+      <form class="col-sm-10 col-lg-8">
+
+        <% if(message){ %>
+          <div class="alert alert-primary text-center" style="padding: 6px 12px;"><%= message %></div>
+        <% } %>
+        <input type="hidden" name="email" value="<%= email %>">
+
+        <div class="form-group row mb-3 form_pass_area">
+          <div class="col-sm-12 pass_input_area">
+            <input type="password" id="password" name="password" class="form-control pass_input text-center" placeholder="password" value="<%= password %>" readonly/>
+            <button class="visibility" style="background-color: #e9ecef;">
+              <span class="material-symbols-outlined pass_show_btn">visibility</span>
+            </button>
+          </div>
+        </div>
+        
+        <input type="hidden" name="repassword" value="<%= repassword %>">
+
+        <div class="btn_field">
+          <button id="back_btn" type="submit" data-method="post" data-action="/passwordchange/changeform">
+            <span class="btn_inside">
+              <span class="material-symbols-outlined">arrow_back</span>
+              <span class="btn_text">&nbsp;Back</span>
+            </span>
+          </button>
+
+          <button id="execute_btn" type="submit" data-method="post" data-action="/passwordchange/update">
+            <span class="btn_inside">
+              <span class="material-symbols-outlined">update</span>
+              <span class="btn_text">&nbsp;Update</span>
+            </span>
+          </button>
+        </div>
+    
+      </form>
+      <!-- ----- フォーム(ここまで) ----- -->
+
+    </div>
+  </main>
+  <!-- ----- メイン(ここまで) ----- -->
+
+  <%- include("../_share/footer.ejs") %>
+  <%- include("../_share/javascripts.ejs") %>
+
+  <!-- back/execute button action -->
+  <script type="text/javascript" src="/public/js/back.execute.btn.action.js"></script>
+
+  <!-- submit button activation -->
+  <script type="text/javascript">
+    const visibilityBtn = document.querySelector(".visibility");
+    const passInput = document.getElementById("password");
+    const passShowBtn = document.querySelectorAll(".pass_show_btn");
+
+    visibilityBtn.addEventListener("click", e => {
+      e.preventDefault();
+      if(passInput.type == "password"){
+        passInput.type = "text";
+        passShowBtn.ftextContent = "hide_source";
+      } else {
+        passInput.type = "password";
+        passShowBtn.textContent = "visibility";
+      }
+    });
+  </script>
+</body>
+</html>

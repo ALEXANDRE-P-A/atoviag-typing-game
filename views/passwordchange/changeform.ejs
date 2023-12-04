@@ -3,7 +3,7 @@
 <head>
   <%- include("../_share/metadata.ejs") %>
   <%- include("../_share/stylesheets.ejs") %>
-  <title>Signin Page</title>
+  <title>Password change form</title>
   <!-- re-captcha implementation starts here -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
@@ -11,6 +11,7 @@
       document.getElementById('submit_btn').disabled = false;
     }
   </script>
+  <!-- re-captcha implementation ends here -->
 </head>
 <body>
   <%- include("../_share/header.ejs") %>
@@ -18,35 +19,38 @@
    <!-- ----- メイン(ここから) ----- -->
    <main class="container">
     <div class=" col-sm-10 col-lg-8 border-bottom mt-5 mb-3" style="margin: 0 auto;">
-      <h1>Sign In</h1>
+      <h1>Change Password</h1>
     </div>
     <div class="row justify-content-center">
       
-      <!-- ----- サインインフォーム(ここから) ----- -->
-      <form method="post" action="/signin" class="col-sm-10 col-lg-8">
+      <!-- ----- フォーム(ここから) ----- -->
+      <form method="post" action="/passwordchange/newpasswordconfirm" class="col-sm-10 col-lg-8">
 
-        <% if (message && message.length !== 0) { %>
-          <div class="alert alert-danger text-center" style="padding: 6px 12px;"><%= message %></div>
+        <% if(message){ %>
+          <div class="alert alert-primary text-center" style="padding: 6px 12px;"><%= message %></div>
+        <% } else if(alert){ %>
+          <div class="alert alert-danger text-center" style="padding: 6px 12px;"><%= alert %></div>
         <% } %>
 
-        <div class="form-group row mb-3">
-          <div class="col-sm-12">
-            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required/>
-          </div>
-        </div>
+        <input type="hidden" name="email" value="<%= email %>">
+
         <div class="form-group row mb-3 form_pass_area">
           <div class="col-sm-12 pass_input_area">
-            <input type="password" id="password" name="password" class="form-control pass_input" placeholder="Password" required/>
+            <input type="password" id="password" name="password" class="form-control pass_input" placeholder="password" value="<%= password %>" required/>
             <button class="visibility">
               <span class="material-symbols-outlined pass_show_btn">visibility</span>
             </button>
           </div>
         </div>
-        <!-- password change link starts here -->
-        <div class="col-sm-12 text-center">
-          Do not remember password ? <a style="color: #0000ff; text-decoration: underline;" href="/passwordchange">consult here</a>
+        
+        <div class="form-group row mb-3 form_pass_area">
+          <div class="col-sm-12 pass_input_area">
+            <input type="password" id="repassword" name="repassword" class="form-control pass_input" placeholder="re-password" value="<%= repassword %>" required/>
+            <button class="visibility">
+              <span class="material-symbols-outlined pass_show_btn">visibility</span>
+            </button>
+          </div>
         </div>
-        <!-- password change link ends here -->
 
         <!-- re-captcha implementation starts here -->
         <div class="form-group row" style="display: flex;justify-content: center;">
@@ -59,14 +63,14 @@
         <div class="btn_field">
           <button type="submit" id="submit_btn" disabled>
             <span class="btn_inside">
-              <span class="material-symbols-outlined">login</span>
-              <span class="btn_text">&nbsp;Sign in</span>
+              <span class="material-symbols-outlined">app_registration</span>
+              <span class="btn_text">&nbsp;Confirm</span>
             </span>
           </button>
         </div>
     
       </form>
-      <!-- ----- サインインフォーム(ここまで) ----- -->
+      <!-- ----- フォーム(ここまで) ----- -->
 
     </div>
   </main>
@@ -74,16 +78,20 @@
 
   <%- include("../_share/footer.ejs") %>
   <%- include("../_share/javascripts.ejs") %>
+
+  <!-- submit button activation -->
+  <script type="text/javascript" src="/public/js/passview.js"></script>
+
   <!-- recaptcha field action -->
   <script>
     /* ----- HTMLの取得 ----- */
-    const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
+    const repasswordInput = document.getElementById("repassword");
     const recaptchaField = document.querySelector(".g-recaptcha");
 
     /* ----- 関数の設定 ----- */
     let checkField = _ => {
-      if(emailInput.value != "" && passwordInput.value != "")
+      if(passwordInput.value != "" && repasswordInput.value != "")
         recaptchaField.classList.remove("hidden");
       else 
         recaptchaField.classList.add("hidden");
@@ -93,26 +101,8 @@
     checkField();
 
     /* ----- イベントリスナーの設定 ----- */
-    emailInput.addEventListener("input", checkField);
     passwordInput.addEventListener("input", checkField);
-  </script>
-
-  <!-- submit button activation -->
-  <script>
-    const visibilityBtn = document.querySelector(".visibility");
-    const passInput = document.querySelector("input[type='password']");
-    const passShowBtn = document.querySelector(".pass_show_btn");
-
-    visibilityBtn.addEventListener("click", e => {
-      e.preventDefault();
-      if(passInput.type == "password"){
-        passInput.type = "text";
-        passShowBtn.textContent = "hide_source";
-      } else {
-        passInput.type = "password";
-        passShowBtn.textContent = "visibility";
-      }
-    });
+    repasswordInput.addEventListener("input", checkField);
   </script>
 </body>
 </html>

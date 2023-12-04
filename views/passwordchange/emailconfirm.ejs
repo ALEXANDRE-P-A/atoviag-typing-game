@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%- include("../_share/metadata.ejs") %>
+  <title>Email confirmation</title>
+  <%- include("../_share/stylesheets.ejs") %>
+</head>
+<body>
+  <%- include("../_share/header.ejs") %>
+
+  <!-- ----- メイン(ここから) ----- -->
+  <main class="container">
+    <div class=" col-sm-10 col-lg-8 border-bottom mt-5 mb-3" style="margin: 0 auto;">
+      <h1>Confirm</h1>
+    </div>
+    <div class="row justify-content-center">
+      <form class="col-sm-10 col-lg-8">
+        
+        <div class="alert alert-primary text-center" style="padding: 6px 12px;">
+          A message with a link to change password will be sent to the below email address
+        </div>
+
+        <div class="form-group row mb-3">
+          <div class="col-sm-12">
+            <input type="email" id="email" name="email" class="form-control text-center"  value="<%= email %>" readonly/>
+          </div>
+        </div>
+        
+        <input type="hidden" name="reemail" value="<%= reemail %>" >
+
+        <div class="btn_field">
+
+          <button id="back_btn" type="submit" data-method="post" data-action="/passwordchange">
+            <span class="btn_inside">
+              <span class="material-symbols-outlined">arrow_back</span>
+              <span class="btn_text">&nbsp;Back</span>
+            </span>
+          </button>
+
+          <button id="execute_btn" type="submit" data-method="post" data-action="/passwordchange/execute">
+            <span class="btn_inside">
+              <span class="material-symbols-outlined">mail</span>
+              <span class="btn_text">&nbsp;Send</span>
+            </span>
+          </button>
+          
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- ----- メイン(ここまで) ----- -->
+
+  <%- include("../_share/footer.ejs") %>
+  <%- include("../_share/javascripts.ejs") %>
+  <!-- submit button activation -->
+  <script type="text/javascript" src="/public/js/passview.confirm.js"></script>
+
+  <!-- back/execute button action -->
+  <script type="text/javascript" src="/public/js/back.execute.btn.action.js"></script>
+</body>
+</html>

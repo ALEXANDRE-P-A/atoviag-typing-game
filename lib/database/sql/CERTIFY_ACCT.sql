@@ -1,7 +1,9 @@
 UPDATE
   users
 SET
-  certifyAt = now()
+  certifyAt = now(),
+  last_cookie = null,
+  last_session = null
 WHERE
   last_cookie = ?
   AND

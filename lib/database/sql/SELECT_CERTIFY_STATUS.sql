@@ -1,4 +1,6 @@
 SELECT
+  email,
+  createdAt,
   certifyAt
 FROM
   users

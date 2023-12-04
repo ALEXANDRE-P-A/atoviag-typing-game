@@ -104,8 +104,8 @@ router.post("/execute", async (req, res, next) => { // トークンの確認(csr
 
   mail(email, req.cookies.atoviag_csrf, req.session.atoviag_csrf, req.get("host"));  
 
-  delete req.session.atoviag_csrf; // 正常に操作できた場合はセッションを破棄する
-  res.clearCookie("atoviag_csrf"); // 正常に操作できた場合はクッキー破棄を指示
+  delete req.session.atoviag_csrf; // if the operation is successful, destroy the session
+  res.clearCookie("atoviag_csrf"); // if the operation is successful, instruct to discard cookies.
 
   res.redirect(`/signup/completed?email=${email}`);
 });
