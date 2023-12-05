@@ -1,4 +1,4 @@
-/* ----- Googleアイコン(サインインボタン) ----- */
+/* ----- Google icon (sign-in button) ----- */
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -7,7 +7,7 @@
   'opsz' 24
 }
 
-/* ----- ボディ全体 ----- */
+/* ----- whole body ----- */
 body {
   display: block;
   max-width: 1440px;
@@ -20,7 +20,104 @@ body {
   /* font-family: 'Tiro Bangla', serif; */
 }
 
-/* ----- ヘッダー領域 ----- */
+/* ----- Modal window when displaying ----- */
+#keypress-check-window {
+  background-color: #fff;
+  width: 650px;
+  padding: 10px 30px;
+  border-radius: 0 0 5px 5px;
+  border: solid rgba(0,0,0,.3);
+  border-width: 0 1px 1px 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.8s;
+  z-index: 4;
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* ----- Title of modal window when displayed ----- */
+#keypress-check-window p {
+  text-align: center;
+  font-size: 15px;
+  margin: 15px 0 ;
+}
+
+/* ----- Area of ​​confirmation items in modal window when displayed ----- */
+#keypress-check-window div, #keypress-check-window ol {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li{
+  position: relative;
+  padding-left: 5px;
+}
+
+li:before {
+  content: "";
+  position: absolute;
+  top: .1em;
+  left: 0;
+  -webkit-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  transform: rotate(50deg);
+  width: 5px;
+  height: 10px;
+  border-right: 3px solid lightgreen;
+  border-bottom: 3px solid  lightgreen;
+}
+
+li.li_effect:before {
+  border-right: 3px solid red;
+  border-bottom: 3px solid  red;
+}
+
+/* ----- Confirmation items and check fields in the modal window when displayed ----- */
+#keypress-check-window div p, #keypress-check-window ol li  {
+  text-align: left;
+  line-height: 30px;
+  font-size: 12px;
+  margin: 5px 0;
+  width: 50%;
+}
+
+/* ----- Modal window when hidden ----- */
+#keypress-check-window.hidden {
+  transform: translate(0,-500px);
+}
+
+/* ----- Modal window btn area ----- */
+.modal-window-btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 15px auto;
+}
+
+/* ----- start button ----- */
+#game-start-btn {
+  opacity: 1;
+}
+
+#game-start-btn:disabled {
+  opacity: .5;
+}
+
+/* ----- Modal window close btn ----- */
+.keypress-check-window-close-btn {
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* ----- header area ----- */
 header {
   width: 100%;
   background-color: #333a40;
@@ -30,7 +127,7 @@ header {
   font-size: .9em;
 }
 
-/* ----- ナビゲーション ----- */
+/* ----- navigation ----- */
 nav {
   width: 60%;
   display: flex;
@@ -40,13 +137,13 @@ nav {
   margin: 10px 0;
 }
 
-/* ----- メイン領域 ----- */
+/* ----- main area ----- */
 main {
   width: 60%;
   margin: 10px auto;
 }
 
-/* ----- テキストアクション領域 ----- */
+/* ----- text action area ----- */
 #text_area {
   width: 100%;
   height: 200px;
@@ -57,7 +154,7 @@ main {
   font-size: 2.2em;
 }
 
-/* ----- ボタン領域 ----- */
+/* ----- button area ----- */
 .btn_field {
   width: 100%;
   margin-top: 10px;
@@ -65,9 +162,7 @@ main {
   justify-content: space-around;
 }
 
-
-
-/* ----- ボタン ----- */
+/* ----- button ----- */
 button {
   background-color: #007bff;
   color: #fff;
@@ -90,12 +185,12 @@ button {
   align-items: center;
 }
 
-/* ----- 正しくタイプされた場合のテキスト ----- */
+/* ----- text if typed correctly ----- */
 #typed {
   color: lightgreen;
 }
 
-/* ----- アクセス時のエフェクト ----- */
+/* ----- effect on access ----- */
 #text_area.initial-effect {
   background-color: lightgreen;
 }
@@ -170,18 +265,59 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  /* ----- whole body SP ----- */
   body {
     width: 100%;
   }
 
-  /* ----- ナビゲーションSP ----- */
+  /* ----- Modal window when displayed SP ----- */
+  #keypress-check-window {
+    width: 100%;
+    padding: 30px 0;
+    border-width: 0 0 1px 0;
+  }
+
+  /* ----- Title of modal window when displayed SP ----- */
+  #keypress-check-window p {
+    margin: 15px 0;
+  }
+
+  /* ----- Area of ​​confirmation items in modal window when displayed SP ----- */
+  #keypress-check-window div, #keypress-check-window ol {
+    width: 90%;
+    flex-direction: column;
+    margin: 15px auto;
+  }
+
+  /* ----- Confirmation items and check fields in the modal window when displayed SP ----- */
+  #keypress-check-window div p, #keypress-check-window ol li  {
+    width: auto;
+  }
+
+  /* ----- Modal window when hidden SP ----- */
+  #keypress-check-window.hidden {
+    transform: translate(0,-700px);
+  }
+
+  /* ----- Modal window btn area SP ----- */
+  .modal-window-btn-area {
+    margin: 15px auto;
+  }
+
+  /* ----- start button SP ----- */
+  #game-start-btn {
+    width: fit-content;
+    opacity: 1;
+  }
+
+  /* ----- navigation SP ----- */
   nav {
     width: 100%;
     margin: 10px;
     justify-content: space-between;
   }
 
-  /* ----- メイン領域SP ----- */
+  /* ----- main area SP ----- */
   main {
     width: 100%;
     font-size: .75em;
