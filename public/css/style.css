@@ -21,7 +21,7 @@ body {
 }
 
 /* ----- Modal window when displaying ----- */
-#keypress-check-window {
+#check-window {
   background-color: #fff;
   width: 650px;
   padding: 10px 30px;
@@ -41,14 +41,14 @@ body {
 }
 
 /* ----- Title of modal window when displayed ----- */
-#keypress-check-window p {
+#check-window p {
   text-align: center;
   font-size: 15px;
   margin: 15px 0 ;
 }
 
 /* ----- Area of ​​confirmation items in modal window when displayed ----- */
-#keypress-check-window div, #keypress-check-window ol {
+#check-window div, #check-window ol {
   display: flex;
   flex-wrap: wrap;
 }
@@ -78,7 +78,7 @@ li.li_effect:before {
 }
 
 /* ----- Confirmation items and check fields in the modal window when displayed ----- */
-#keypress-check-window div p, #keypress-check-window ol li  {
+#check-window div p, #check-window ol li  {
   text-align: left;
   line-height: 30px;
   font-size: 12px;
@@ -87,7 +87,7 @@ li.li_effect:before {
 }
 
 /* ----- Modal window when hidden ----- */
-#keypress-check-window.hidden {
+#check-window.hidden {
   transform: translate(0,-500px);
 }
 
@@ -110,11 +110,18 @@ li.li_effect:before {
 }
 
 /* ----- Modal window close btn ----- */
-.keypress-check-window-close-btn {
+.check-window-close-btn {
   position:absolute;
   bottom: 0;
   right: 0;
+  pointer-events: none;
+  opacity: .5;
   cursor: pointer;
+}
+
+.check-window-close-btn.show {
+  pointer-events: fill;
+  opacity: 1;
 }
 
 /* ----- header area ----- */
@@ -271,31 +278,31 @@ label {
   }
 
   /* ----- Modal window when displayed SP ----- */
-  #keypress-check-window {
+  #check-window {
     width: 100%;
     padding: 30px 0;
     border-width: 0 0 1px 0;
   }
 
   /* ----- Title of modal window when displayed SP ----- */
-  #keypress-check-window p {
+  #check-window p {
     margin: 15px 0;
   }
 
   /* ----- Area of ​​confirmation items in modal window when displayed SP ----- */
-  #keypress-check-window div, #keypress-check-window ol {
+  #check-window div, #check-window ol {
     width: 90%;
     flex-direction: column;
     margin: 15px auto;
   }
 
   /* ----- Confirmation items and check fields in the modal window when displayed SP ----- */
-  #keypress-check-window div p, #keypress-check-window ol li  {
+  #check-window div p, #check-window ol li  {
     width: auto;
   }
 
   /* ----- Modal window when hidden SP ----- */
-  #keypress-check-window.hidden {
+  #check-window.hidden {
     transform: translate(0,-700px);
   }
 

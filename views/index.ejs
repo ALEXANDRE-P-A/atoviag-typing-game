@@ -7,25 +7,17 @@
 </head>
 <body>
   <!-- ----- keypress type modal window starts here ----- -->
-  <div id="keypress-check-window" class="hidden">
+  <div id="check-window" class="hidden">
     <p>Please check the rules before you start</p>
     <div>
-      <ol id="check_items">
-        <li>Use English keyboard only</li>
-        <li>The time limit is 60 seconds</li>
-        <li>Invalid string input will not be accepted</li>
-        <li>All characters entered will be subject to evaluation.</li>
-        <li>Uppercase and lowercase input is sensitive</li>
-        <li>Game Start! Starts 3 seconds after pressing the button</li>
-        <li>The score will be displayed after the game ends</li>
-      </ol>
+      <ol id="check_items"></ol>
     </div>
     <div class="modal-window-btn-area">
       <button id="game-start-btn" style="display: flex; justify-content: center; align-items: center; font-size: 1.3em;" disabled>
         <span class="material-symbols-outlined">start</span>
         Start
       </button>
-      <span class="material-symbols-outlined keypress-check-window-close-btn">disabled_by_default</span>
+      <span class="material-symbols-outlined check-window-close-btn">disabled_by_default</span>
     </div>
   </div>
   <!-- ----- keypress type modal window ends here ----- -->
@@ -46,7 +38,7 @@
     <!-- ----- button area starts here ----- -->
     <section class="btn_field">
 
-      <% if(locals.user) { %>
+      <% // if(locals.user) { %>
         <!-- keypress type button starts here -->
         <button style="display: flex; flex-direction: column; align-items: center;" id="keypresstype_btn">
           <span class="material-symbols-outlined">keyboard</span>
@@ -60,16 +52,16 @@
           <span style="margin-top: 5px;">&nbsp;text input type</span>
         </button>
         <!-- text input type button ends here -->
-      <% } else { %>
+      <% // } else { %>
         <!-- sign in button starts here -->
-        <button onclick="location.href='/signin'">
+        <!-- <button onclick="location.href='/signin'">
           <span class="btn_inside">
             <span class="material-symbols-outlined">login</span>
             <span class="btn_text">&nbsp;Sign In</span>
           </span>
-        </button>
+        </button> -->
         <!-- sign in button ends here -->
-      <%  } %>
+      <% // } %>
       
       <!-- スタートボタン -->
       <!-- <button style="display: flex; flex-direction: column; align-items: center; padding: 5px 10px;">
