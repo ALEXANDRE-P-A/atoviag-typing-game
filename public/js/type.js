@@ -32,7 +32,8 @@ const textinputTypeRules = [
   "Score will be displayed after the game ends"
 ]; 
 
-/* ----- add rules function in modal window ----- */
+/* ----- ----- ----- functions starts here ----- ----- ----- */
+/* ----- (function) add rules in modal window ----- */
 const addRules = rules => {
   for(let i = 0;i < rules.length;i++){
     const list = document.createElement("li");
@@ -41,14 +42,13 @@ const addRules = rules => {
   }
 };
 
-/* ----- ----- ----- functions starts here ----- ----- ----- */
-/* ----- remove rules function in modal window ----- */
+/* ----- (function) remove rules in modal window ----- */
 const removeRules = _ => {
   while(checkItems.firstChild)
     checkItems.removeChild(checkItems.firstChild);
 };
 
-/* ----- check items effect function ----- */
+/* ----- (function) check items effect ----- */
 const checkEffect = _ => {
   let itemNumber = 0;
   const checkIntervalTime = 250;
@@ -66,7 +66,7 @@ const checkEffect = _ => {
   }, checkIntervalTime);
 };
 
-/* ----- check items effect return function (when click close button) ----- */
+/* ----- (function) check items effect return (when click close button) ----- */
 const disableCheckEffect = _ => {
   for(let i = 0;i < checkItems.children.length - 1; i++ )
     checkItems.children[i].classList.remove("li_effect");
@@ -74,7 +74,7 @@ const disableCheckEffect = _ => {
   checkWindowCloseBtn.classList.remove("show");
 };
 
-/* ----- game count to start function (when click start button) ----- */
+/* ----- (function) game count to start (when click start button) ----- */
 const timeLeft = document.getElementById("time_left");
 
 const countToStart = _ => {
@@ -88,8 +88,19 @@ const countToStart = _ => {
         timeLeft.classList.add("hidden");
       }, 500);
     }
+    timeLeft.classList.add("counting");
+    setTimeout(_ => {
+      timeLeft.classList.remove("counting");
+    }, 500);
     toStartTime -= 1000;
   }, 1000);
+};
+
+/* ----- (function) display random text ----- */
+const typedText = document.getElementById("typed");
+
+const createText = _ => {
+  typedText.textContent = "";
 };
 /* ----- ----- ----- ----- ----- functions ends here ----- ----- ----- ----- ----- */
 

@@ -158,13 +158,18 @@ main {
   text-align: center;
   height: auto;
   opacity: 1;
-  transition: 3s;
+  transition: opacity 1s height 0s;
+}
+
+#time_left.counting {
+  color: #fff;
+  background-color: red;
 }
 
 #time_left.hidden {
   height: 0;
   opacity: 0;
-  transition: 3s;
+  transition: opactiy 0s height 1s;
 }
 
 /* ----- text action area ----- */
