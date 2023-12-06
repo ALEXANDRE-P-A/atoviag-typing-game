@@ -27,6 +27,10 @@
   <!-- ----- main starts here ----- -->
   <main>
 
+    <section id="timer_area">
+      <p id="time_left" class="hidden"></p>
+    </section>
+
     <!-- ----- text action area starts here----- -->
     <section id="text_area">
       <div>
@@ -47,7 +51,7 @@
         <!-- keypress type button ends here -->
 
         <!-- text input type button starts here -->
-        <button style="display: flex; flex-direction: column; align-items: center;">
+        <button style="display: flex; flex-direction: column; align-items: center;" id="textinputype_btn">
           <span class="material-symbols-outlined">text_fields</span>
           <span style="margin-top: 5px;">&nbsp;text input type</span>
         </button>
@@ -79,9 +83,7 @@
   <%- include("./_share/javascripts.ejs") %>
   <!-- main page action js -->
   <script type="text/javascript" src="/public/js/main.js"></script>
-  <!-- keypress type javascript -->
-  <script type="text/javascript" src="/public/js/keypresstype.js"></script>
-  <!-- textinput type javascript -->
-  <script type="text/javascript" src="/public/js/textinputtype.js"></script>
+  <!-- type javascript -->
+  <script type="text/javascript" src="/public/js/type.js"></script>
 </body>
 </html>

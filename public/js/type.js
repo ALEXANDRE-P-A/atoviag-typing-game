@@ -6,8 +6,8 @@
 
 /* ----- obtaining the required HTML elements ends here ----- */
 
-/* ----- ----- ----- modal window action starts here ----- ----- ----- */
 const keypresstypeBtn = document.getElementById("keypresstype_btn");
+const textinputtypeBtn = document.getElementById("textinputype_btn");
 const checkWindow = document.getElementById("check-window");
 const checkWindowCloseBtn = document.querySelector(".check-window-close-btn");
 const checkItems = document.getElementById("check_items");
@@ -21,8 +21,18 @@ const keypressTypeRules = [
   "Game starts after 3 seconds after pressing the button",
   "Score will be displayed after the game ends"
 ];
+const textinputTypeRules = [
+  "Use English keyboard only",
+  "Copy paste function cannot be used",
+  "Confirm your input with the Enter key or Enter button",
+  "Confirmation of incorrect string will not be accepted",
+  "All characters entered will be subject to evaluation",
+  "Uppercase and lowercase input is sensitive",
+  "Game starts after 3 seconds after pressing the button",
+  "Score will be displayed after the game ends"
+]; 
 
-/* ----- add rules in modal window ----- */
+/* ----- add rules function in modal window ----- */
 const addRules = rules => {
   for(let i = 0;i < rules.length;i++){
     const list = document.createElement("li");
@@ -31,17 +41,17 @@ const addRules = rules => {
   }
 };
 
-/* ----- remove rules in modal window ----- */
+/* ----- ----- ----- functions starts here ----- ----- ----- */
+/* ----- remove rules function in modal window ----- */
 const removeRules = _ => {
-  console.log(checkItems.children.length);
   while(checkItems.firstChild)
     checkItems.removeChild(checkItems.firstChild);
 };
 
-/* ----- check items effect ----- */
+/* ----- check items effect function ----- */
 const checkEffect = _ => {
   let itemNumber = 0;
-  const checkIntervalTime = 500;
+  const checkIntervalTime = 250;
 
   let makeCheck = setInterval(_ => {
     if(itemNumber === checkItems.children.length - 1){
@@ -56,7 +66,7 @@ const checkEffect = _ => {
   }, checkIntervalTime);
 };
 
-/* ----- check items effect return(when click close button) ----- */
+/* ----- check items effect return function (when click close button) ----- */
 const disableCheckEffect = _ => {
   for(let i = 0;i < checkItems.children.length - 1; i++ )
     checkItems.children[i].classList.remove("li_effect");
@@ -64,11 +74,40 @@ const disableCheckEffect = _ => {
   checkWindowCloseBtn.classList.remove("show");
 };
 
+/* ----- game count to start function (when click start button) ----- */
+const timeLeft = document.getElementById("time_left");
+
+const countToStart = _ => {
+  let toStartTime = 3000;
+  timeLeft.classList.remove("hidden");
+  let intervalToStart = setInterval(_ => {
+    timeLeft.textContent = toStartTime/1000;
+    if(toStartTime <= 0){
+      clearInterval(intervalToStart);
+      setTimeout(_ => {
+        timeLeft.classList.add("hidden");
+      }, 500);
+    }
+    toStartTime -= 1000;
+  }, 1000);
+};
+/* ----- ----- ----- ----- ----- functions ends here ----- ----- ----- ----- ----- */
+
+/* ----- ----- ----- modal window action starts here ----- ----- ----- */
 /* ----- keypress type button action ----- */
 keypresstypeBtn.addEventListener("click", _ => {
   addRules(keypressTypeRules);
   checkWindow.classList.remove("hidden");
   checkEffect();
+  gameStartBtn.setAttribute("data-method", "keypresstype");
+});
+
+/* ----- textinput type button action ----- */
+textinputtypeBtn.addEventListener("click", _ => {
+  addRules(textinputTypeRules);
+  checkWindow.classList.remove("hidden");
+  checkEffect();
+  gameStartBtn.setAttribute("data-method", "textinputtype");
 });
 
 /* ----- close button action ----- */
@@ -77,7 +116,6 @@ checkWindowCloseBtn.addEventListener("click", _ => {
   disableCheckEffect();
   removeRules();
 });
-/* ----- ----- ----- modal window action ends here ----- ----- ----- */
 
 /* ----- game start action starts here ----- */
 gameStartBtn.addEventListener("click", _ => {
@@ -85,5 +123,12 @@ gameStartBtn.addEventListener("click", _ => {
   checkWindow.classList.add("hidden");
   disableCheckEffect();
   removeRules();
+  countToStart();
+  console.log(gameStartBtn.getAttribute("data-method"));
 });
 /* ----- game start action ends here ----- */
+/* ----- ----- ----- modal window action ends here ----- ----- ----- */
+
+/* ----- ----- ----- game start count starts here ----- ----- ----- */
+
+/* ----- ----- ----- game start count ends here ----- ----- ----- */
