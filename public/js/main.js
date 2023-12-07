@@ -142,12 +142,13 @@ const countToStart = _ => {
   let intervalToStart = setInterval(_ => {
     timeLeft.textContent = toStartTime/1000;
     if(toStartTime <= 0){
-      timeLeft.textContent = "start!";
+      timeLeft.textContent = (currentGameType === "keypresstype") ? "60" : "75" ;
       clearInterval(intervalToStart);
       setTimeout(_ => {
       }, 500);
       createText();
       document.querySelector("input[type='text']").focus();
+      timer();
     }
     timeLeft.classList.add("counting");
     setTimeout(_ => {
@@ -171,6 +172,18 @@ const createText = _ => {
     console.log(currentGameType);
     // startType = 0;
   }
+};
+
+/* ----- (function) count timer ----- */
+const timer = _ => {
+  let time = Math.round(parseFloat(timeLeft.textContent)).toFixed(2);
+  console.log(time);
+  let id = setInterval(_ => {
+    time -= 0.01;
+    timeLeft.textContent = parseFloat(time).toFixed(2);
+    if(time <= 0)
+      clearInterval(id);
+  }, 10);
 };
 /* ----- ----- ----- ----- ----- functions ends here ----- ----- ----- ----- ----- */
 
