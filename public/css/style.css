@@ -156,14 +156,15 @@ main {
   font-size: 1.5em;
   margin: 0;
   text-align: center;
-  height: auto;
+  height: 40px;
   opacity: 1;
   transition: opacity 1s height 0s;
+  transition: .5s;
 }
 
 #time_left.counting {
-  color: #fff;
-  background-color: red;
+  color: #ff0000;
+  transition: .5s;
 }
 
 #time_left.hidden {
@@ -217,6 +218,15 @@ button {
 /* ----- text if typed correctly ----- */
 #typed {
   color: lightgreen;
+}
+
+#untyped {
+  transition: .5s;
+}
+
+#untyped.counting {
+  color: #ff0000;
+  transition: .5s;
 }
 
 /* ----- effect on access ----- */
@@ -291,6 +301,30 @@ label {
 
 #submit_btn:disabled {
   opacity: .5;
+}
+
+/* -----  keypresstype type input (this is shown only for smartphone) ----- */
+.keypress-type-area {
+  display: none;
+}
+
+#keypress-type-field {
+  display: none;
+}
+
+/* ----- textinputtype type input ----- */
+#text-input-field {
+  width: 70%;
+  text-align: center;
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+
+#text_input_submit_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 
 @media screen and (max-width: 767px) {
@@ -381,5 +415,33 @@ label {
     width: 100%;
     text-align: center;
     
+  }
+
+  /* ----- keypresstype input SP ----- */
+  .keypress-type-area {
+    display: inline;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  #keypress-type-field {
+    display: inline;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  /* ----- textinputtype type input ----- */
+  #text-input-field {
+    width: 200px;
+  }
+
+  #text_input_submit_btn {
+    height: 42px;
   }
 }

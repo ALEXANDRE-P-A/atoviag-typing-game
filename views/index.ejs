@@ -40,9 +40,9 @@
     <!-- ----- text action area ends here----- -->
 
     <!-- ----- button area starts here ----- -->
-    <section class="btn_field">
-
-      <% // if(locals.user) { %>
+  
+    <% // if(locals.user) { %>
+      <section class="btn_field">
         <!-- keypress type button starts here -->
         <button style="display: flex; flex-direction: column; align-items: center;" id="keypresstype_btn">
           <span class="material-symbols-outlined">keyboard</span>
@@ -56,7 +56,9 @@
           <span style="margin-top: 5px;">&nbsp;text input type</span>
         </button>
         <!-- text input type button ends here -->
-      <% // } else { %>
+      </section>
+    <% // } else { %>
+      <section class="btn_field">
         <!-- sign in button starts here -->
         <!-- <button onclick="location.href='/signin'">
           <span class="btn_inside">
@@ -65,15 +67,9 @@
           </span>
         </button> -->
         <!-- sign in button ends here -->
-      <% // } %>
+      </section>
+    <% // } %>
       
-      <!-- スタートボタン -->
-      <!-- <button style="display: flex; flex-direction: column; align-items: center; padding: 5px 10px;">
-        <span class="material-symbols-outlined">play_arrow</span>
-        <span style="margin-top: 5px;">&nbsp;start</span>
-      </button> -->
-
-    </section>
     <!-- ----- button area ends here ----- -->
 
   </main>
@@ -83,7 +79,5 @@
   <%- include("./_share/javascripts.ejs") %>
   <!-- main page action js -->
   <script type="text/javascript" src="/public/js/main.js"></script>
-  <!-- type javascript -->
-  <script type="text/javascript" src="/public/js/type.js"></script>
 </body>
 </html>
