@@ -147,6 +147,7 @@ const countToStart = _ => {
       setTimeout(_ => {
       }, 500);
       createText();
+      document.querySelector("input[type='text']").focus();
     }
     timeLeft.classList.add("counting");
     setTimeout(_ => {
