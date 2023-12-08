@@ -27,8 +27,11 @@ let openingAction = setInterval(_ => {
 
 /* ----- initializing variables starts here ----- */
 let currentGameType;
-// let time = 60;
-// let startTime , startType;
+let time;
+let startTime = 0;
+let endTime = 0;
+let keypressCount = 0;
+let score = 0;
 
 /* ----- initializing variables ends here ----- */
 
@@ -68,6 +71,8 @@ const textList = [
   "DIOGO","SOPHIA","YASMIM","ISABELLA","ARTHUR","LARISSA","Isabella","We are the best Sisters!",
   "I love candy","Sinderella Man","POP CORN","BTS","Black Pink","AKB48"
 ];
+
+let doneTextList = [];
 
 /* ----- ----- ----- functions starts here ----- ----- ----- */
 /* ----- (function) add rules in modal window ----- */
@@ -146,9 +151,12 @@ const countToStart = _ => {
       clearInterval(intervalToStart);
       setTimeout(_ => {
       }, 500);
-      createText();
       document.querySelector("input[type='text']").focus();
       timer();
+      createText();
+      if(currentGameType === "keypresstype"){
+        document.addEventListener("keypress", keypress);
+      }
     }
     timeLeft.classList.add("counting");
     setTimeout(_ => {
@@ -162,29 +170,76 @@ const countToStart = _ => {
 const typedText = document.getElementById("typed");
 
 const createText = _ => {
-  typedText.textContent = "";
-  let rand = Math.floor(Math.random() * textList.length);
-  untypedField.textContent = textList[rand];
-  // startTime = time;
-  if(currentGameType === "keypresstype"){
-    console.log(currentGameType);
-  } else if(currentGameType === "textinputytpe"){
-    console.log(currentGameType);
-    // startType = 0;
-  }
+  typedText.textContent = ""; // reset the typed field textcontent
+  let rand = Math.floor(Math.random() * textList.length); // make a random index number
+  untypedField.textContent = textList[rand]; // add in untyped text field a random inde text from text list 
+  startTime = parseFloat(time).toFixed(2); // register the time the text appears
 };
 
 /* ----- (function) count timer ----- */
 const timer = _ => {
-  let time = Math.round(parseFloat(timeLeft.textContent)).toFixed(2);
-  console.log(time);
+  time = Math.round(parseFloat(timeLeft.textContent)).toFixed(2);
   let id = setInterval(_ => {
     time -= 0.01;
     timeLeft.textContent = parseFloat(time).toFixed(2);
     if(time <= 0)
-      clearInterval(id);
+      gameOver(id);
   }, 10);
 };
+
+/* ----- (function) keypress type typing function  ----- */
+const keypress = e => {
+  keypressCount++; // count keypress times
+  setTimeout(_ => { // reset the input field
+    document.getElementById("keypress-type-field").value = "";
+  }, 100);
+  /* ----- if incorrect input action starts here ----- */
+  if(e.key !== untypedField.textContent.substring(0, 1)){
+    textArea.classList.add("mistyped"); // add mistyped class(background)
+    untypedField.classList.add("mistyped"); // add mistyped class(text color)
+    setTimeout(_ => { // remove mistyped class after 0.1seconds
+      textArea.classList.remove("mistyped");
+      untypedField.classList.remove("mistyped");
+    }, 100);
+    if(untypedField.textContent.substring(0, 1) === " ") // if the next key is space
+      document.querySelector(".alert_text").textContent = "input the space key"; // add in alert msg the textcontent
+    else // if the next key is not space
+      document.querySelector(".alert_text").textContent = `input the key ${untypedField.textContent.substring(0, 1)}`; // add the next key in alert msg textcontent
+    document.getElementById("alert_msg").classList.remove("hidden"); // remove hidden from alert msg
+    setTimeout(_=>{ // add hidden in alert msg class agter 1.5seconds
+      document.getElementById("alert_msg").classList.add("hidden");
+    },1500);
+    return; // restart the loop
+  }
+  /* ----- if incorrect input action ends here ----- */
+  score++; // count score
+  typedField.textContent += untypedField.textContent.substring(0, 1); // move the first string of untyped field to typed field
+  untypedField.textContent = untypedField.textContent.substring(1); // update the untyped field
+  /* ----- if untyped field is empty action starts here ----- */
+  if(untypedField.textContent === ""){
+    textList.forEach((key, index) => { // remove the typed text from text list to avoid its appear again
+      if(typedField.textContent == key)
+        textList.splice(index, 1);
+    });
+    endTime = parseFloat(time).toFixed(2); // regist the end time
+    doneTextList.push([typedField.textContent, parseFloat(startTime - endTime).toFixed(2)]); // push into done text list the typed text and the typd time
+    createText(); // create the next text
+  }
+  /* ----- if untyped field is empty action ends here ----- */
+};
+/* ----- (function) game over action ----- */
+const gameOver = id => {
+  doneTextList.push([typedField.textContent, parseFloat(startTime - 0).toFixed(2)]); // push the last typed text into done text list
+  document.removeEventListener("keypress", keypress); // remove the keypress event listener
+  clearInterval(id); // clear the timer
+  typedField.textContent = ""; // reset the typed field textcontent
+  untypedField.textContent = "Game Over"; // update the untyped textcontent
+  document.querySelector("input[type='text']").blur(); // unfocus the text input field
+  doneTextList.unshift([keypressCount, score, `${parseFloat(score/keypressCount).toFixed(2)*100}%`]); // shift the done text list
+  timeLeft.classList.add("hidden"); // hide the timer
+  console.log(doneTextList);
+};
+
 /* ----- ----- ----- ----- ----- functions ends here ----- ----- ----- ----- ----- */
 
 /* ----- ----- ----- modal window action starts here ----- ----- ----- */

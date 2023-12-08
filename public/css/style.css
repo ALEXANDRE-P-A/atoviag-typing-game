@@ -179,9 +179,14 @@ main {
   height: 200px;
   background-color: #e8ecee;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2.2em;
+}
+
+#text_area.mistyped {
+  background-color: #f00;
 }
 
 /* ----- button area ----- */
@@ -220,13 +225,9 @@ button {
   color: lightgreen;
 }
 
-#untyped {
-  transition: .5s;
-}
-
-#untyped.counting {
-  color: #ff0000;
-  transition: .5s;
+#untyped.mistyped {
+  color: #fff;
+  transition: 0;
 }
 
 /* ----- effect on access ----- */
@@ -325,6 +326,27 @@ label {
   justify-content: center;
   align-items: center;
   height: 50px;
+}
+
+#alert_msg {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: 1s;
+}
+
+#alert_msg.hidden {
+  height: 0;
+  opacity: 0;
+  transition: .2s;
+}
+
+.alert_text {
+  width: fit-content;
+  margin: 0 auto;
+  color: #f00;
 }
 
 @media screen and (max-width: 767px) {
