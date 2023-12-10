@@ -1,30 +1,3 @@
-/* ----- page access actiom starts here ----- */
-const title = "Welcome to Atoviag Typing Game";
-
-const typedField = document.getElementById("typed");
-const untypedField = document.getElementById("untyped");
-const textArea = document.getElementById("text_area");
-
-typedField.textContent = "";
-untypedField.textContent = title;
-typedField.textContent += untypedField.textContent.substring(0,1);
-untypedField.textContent = untypedField.textContent.substring(1);
-let openingAction = setInterval(_ => {
-  typedField.textContent += untypedField.textContent.substring(0,1);
-  untypedField.textContent = untypedField.textContent.substring(1);
-  if(untypedField.textContent.length === 0){
-    clearInterval(openingAction);
-    textArea.classList.add("initial-effect");
-    let openingActionFinish = setInterval(_ => {
-      textArea.classList.remove("initial-effect");
-      typedField.textContent = "";
-      untypedField.textContent = title;
-      clearInterval(openingActionFinish);
-    }, 100);
-  }
-}, 75);
-/* ----- page access actiom ends here ----- */
-
 /* ----- initializing variables starts here ----- */
 let currentGameType;
 let time;
@@ -32,6 +5,9 @@ let startTime = 0;
 let endTime = 0;
 let keypressCount = 0;
 let score = 0;
+const titleMsgOne = document.getElementById("title_msg_one");
+const titleMsgTwo = document.getElementById("title_msg_two");
+const titleMsgs = document.querySelectorAll(".title_msgs");
 
 /* ----- initializing variables ends here ----- */
 
@@ -73,6 +49,41 @@ const textList = [
 ];
 
 let doneTextList = [];
+
+/* ----- page access actiom starts here ----- */
+const title = "Welcome to Atoviag Typing Game";
+
+const typedField = document.getElementById("typed");
+const untypedField = document.getElementById("untyped");
+const textArea = document.getElementById("text_area");
+
+typedField.textContent = "";
+untypedField.textContent = title;
+setTimeout(_ => {
+  titleMsgs.forEach(msg => {
+    msg.classList.add("show");
+  });
+  titleMsgOne.textContent = "This is an application that measures your typing speed";
+  titleMsgTwo.textContent = "Use English keyboard only";
+}, 3000);
+
+typedField.textContent += untypedField.textContent.substring(0,1);
+untypedField.textContent = untypedField.textContent.substring(1);
+let openingAction = setInterval(_ => {
+  typedField.textContent += untypedField.textContent.substring(0,1);
+  untypedField.textContent = untypedField.textContent.substring(1);
+  if(untypedField.textContent.length === 0){
+    clearInterval(openingAction);
+    textArea.classList.add("initial-effect");
+    let openingActionFinish = setInterval(_ => {
+      textArea.classList.remove("initial-effect");
+      typedField.textContent = "";
+      untypedField.textContent = title;
+      clearInterval(openingActionFinish);
+    }, 100);
+  }
+}, 75);
+/* ----- page access actiom ends here ----- */
 
 /* ----- ----- ----- functions starts here ----- ----- ----- */
 /* ----- (function) add rules in modal window ----- */

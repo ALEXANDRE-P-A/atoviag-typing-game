@@ -230,6 +230,18 @@ button {
   transition: 0;
 }
 
+.title_msgs {
+  height: 0;
+  opacity: 0;
+  transition: 1s;
+}
+
+.title_msgs.show {
+  opacity: .6;
+  transition: 1s;
+  height: 20px;
+}
+
 /* ----- effect on access ----- */
 #text_area.initial-effect {
   background-color: lightgreen;
