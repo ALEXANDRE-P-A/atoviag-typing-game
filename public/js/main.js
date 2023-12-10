@@ -2,19 +2,16 @@
 let currentGameType;
 let time;
 let startTime = 0;
+let startType;
 let endTime = 0;
 let keypressCount = 0;
 let score = 0;
 const titleMsgOne = document.getElementById("title_msg_one");
 const titleMsgTwo = document.getElementById("title_msg_two");
 const titleMsgs = document.querySelectorAll(".title_msgs");
-
 /* ----- initializing variables ends here ----- */
 
 /* ----- obtaining the required HTML elements starts here ----- */
-
-/* ----- obtaining the required HTML elements ends here ----- */
-
 const keypresstypeBtn = document.getElementById("keypresstype_btn");
 const textinputtypeBtn = document.getElementById("textinputype_btn");
 const checkWindow = document.getElementById("check-window");
@@ -49,8 +46,9 @@ const textList = [
 ];
 
 let doneTextList = [];
+/* ----- obtaining the required HTML elements ends here ----- */
 
-/* ----- page access actiom starts here ----- */
+/* ----- page access action starts here ----- */
 const title = "Welcome to Atoviag Typing Game";
 
 const typedField = document.getElementById("typed");
@@ -131,6 +129,13 @@ const disableCheckEffect = _ => {
 const timeLeft = document.getElementById("time_left");
 
 const countToStart = _ => {
+  /* ----- remove title messages starts here ----- */
+  titleMsgs.forEach(msg => {
+    msg.classList.remove("show");
+  });
+  titleMsgOne.textContent = "";
+  titleMsgTwo.textContent = "";
+  /* ----- remove title messages ends here ----- */
   let toStartTime = 3000;
   timeLeft.classList.remove("hidden");
   typedField.textContent = "";
@@ -185,6 +190,10 @@ const createText = _ => {
   let rand = Math.floor(Math.random() * textList.length); // make a random index number
   untypedField.textContent = textList[rand]; // add in untyped text field a random inde text from text list 
   startTime = parseFloat(time).toFixed(2); // register the time the text appears
+  if(gameStartBtn.getAttribute("data-method") === "textinputtype"){
+    startType = 0;
+    console.log(startType);
+  }
 };
 
 /* ----- (function) count timer ----- */
