@@ -38,3 +38,7 @@
 [2023-12-12T13:16:17.489] [INFO] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 5531 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 [2023-12-12T13:16:46.867] [INFO] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 5531 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 [2023-12-12T13:21:02.148] [INFO] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 5531 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+[2023-12-12T13:35:08.180] [WARN] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+[2023-12-12T13:41:02.369] [WARN] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+[2023-12-12T13:42:44.269] [INFO] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 5531 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+[2023-12-12T13:45:38.254] [INFO] access - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 5531 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"

@@ -6,7 +6,6 @@ let startType;
 let endTime = 0;
 let keypressCount = 0;
 let score = 0;
-let keypressValue = 0;
 /* ----- initializing variables ends here ----- */
 
 /* ----- obtaining the required HTML elements starts here ----- */
@@ -176,13 +175,11 @@ const countToStart = _ => {
         document.getElementById("text-input-field").value = ""; // reset the input field
         document.addEventListener("keypress", textInputTypeKeyPress); // if text input type add event textInputTypeKeyPress
         document.getElementById("text_input_submit_btn").addEventListener("click", _ => { // enter button event
-          keypressValue = 0; // reset keypressValue
           textInputConfirmedAction();
         });
         document.getElementById("text-input-field").addEventListener("keydown", e => { // add event when enter key pressed
           if(e.keyCode === 13){
             textInputConfirmedAction();
-            keypressValue--; // discount enter key press from keypressValue
             keypressCount--; // discount enter key press from keypressCount
             startType--; // discount enter key press from startType
           }
@@ -267,7 +264,6 @@ const keyPress = e => {
 /* ----- (function)  text type keypress function starts here ----- */
 const textInputTypeKeyPress = e => {
   if(e.key){ // when key is pressed
-    keypressValue++; // count keypressValue
     keypressCount++; // count keypressCount
     startType++; // startType
     if(!document.getElementById("text-input-field").blur()) // if text input field is not focused
@@ -290,22 +286,28 @@ const gameOver = id => {
 
 /* ----- (function) text input comfirmed action starts here ----- */
 const textInputConfirmedAction = _ => {
-  let accurancyCheck = untypedField.textContent === document.getElementById("text-input-field").value; // check the input and text accurancy
+  let accurancyCheck = untypedField.textContent === document.getElementById("text-input-field").value; // check the input and text accurancy ... 1
   let textLength = untypedField.textContent.length; // text length
-  let typeCheck = startType >= textLength;
-  if(accurancyCheck && typeCheck){
+  let typeCheck = startType >= textLength; // check if the input is really typed .... 2
+  if(accurancyCheck && typeCheck){ // if the input is correct 
     score += textLength; // count score
-    textArea.classList.add("correct_text");
-    setTimeout(_ => { // remove mistyped class after 0.1seconds
+    textArea.classList.add("correct_text"); // add correct animation class
+    setTimeout(_ => { // remove class after 0.1seconds
       textArea.classList.remove("correct_text");
     }, 100);
-    createText();
+    textList.forEach((key, index) => { // remove the typed text from text list to avoid its appear again
+      if(untypedField.textContent == key)
+        textList.splice(index, 1);
+    });
+    endTime = parseFloat(time).toFixed(2); // regist the end time
+    doneTextList.push([untypedField.textContent, parseFloat(startTime - endTime).toFixed(2)]); //  regist the done text
+    createText(); // display the next text
   } else {
-    textArea.classList.add("incorrect_text");
+    textArea.classList.add("incorrect_text"); // add incorrect animation class
     setTimeout(_ => { // remove mistyped class after 0.1seconds
       textArea.classList.remove("incorrect_text");
     }, 100);
-    document.getElementById("text-input-field").value = "";
+    document.getElementById("text-input-field").value = ""; //  reset the input field
   }
 };
 /* ----- (function) text input comfirmed action starts here ----- */
