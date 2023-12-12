@@ -6,6 +6,7 @@ let startType;
 let endTime = 0;
 let keypressCount = 0;
 let score = 0;
+let btnField;
 /* ----- initializing variables ends here ----- */
 
 /* ----- obtaining the required HTML elements starts here ----- */
@@ -44,9 +45,7 @@ const textList = [
 
 let doneTextList = [];
 
-const titleMsgOne = document.getElementById("title_msg_one");
-const titleMsgTwo = document.getElementById("title_msg_two");
-const titleMsgs = document.querySelectorAll(".title_msgs");
+const titleMsg = document.getElementById("title_msg");
 /* ----- obtaining the required HTML elements ends here ----- */
 
 /* ----- page access action starts here ----- */
@@ -59,11 +58,8 @@ const textArea = document.getElementById("text_area");
 typedField.textContent = "";
 untypedField.textContent = title;
 setTimeout(_ => {
-  titleMsgs.forEach(msg => {
-    msg.classList.add("show");
-  });
-  titleMsgOne.textContent = "This is an application that measures your typing speed";
-  titleMsgTwo.textContent = "Use English keyboard only";
+  titleMsg.classList.add("show");
+  titleMsg.textContent = "Application designed specially to enhance and measure your typing skills";
 }, 3000);
 
 typedField.textContent += untypedField.textContent.substring(0,1);
@@ -129,17 +125,14 @@ const timeLeft = document.getElementById("time_left");
 
 const countToStart = _ => {
   /* ----- remove title messages starts here ----- */
-  titleMsgs.forEach(msg => {
-    msg.classList.remove("show");
-  });
-  titleMsgOne.textContent = "";
-  titleMsgTwo.textContent = "";
+  titleMsg.classList.remove("show");
+  titleMsg.textContent = "";
   /* ----- remove title messages ends here ----- */
   let toStartTime = 3000;
   timeLeft.classList.remove("hidden");
   typedField.textContent = "";
   untypedField.textContent =  "- texts appear here -";
-  const btnField = document.querySelector(".btn_field");
+  btnField = document.querySelector(".btn_field");
   if(gameStartBtn.getAttribute("data-method") === "keypresstype"){
     btnField.innerHTML = `
       <div class="keypress-type-area">
@@ -152,7 +145,7 @@ const countToStart = _ => {
     btnField.innerHTML = `
       <div style="width: 100%; display: flex; justify-content: center; align-items: center">
         <input type="text" id="text-input-field" class="form-control">
-        <button id="text_input_submit_btn">
+        <button type="submit" id="text_input_submit_btn">
           <span class="material-symbols-outlined">check</span>
           Check
         </button>
@@ -174,16 +167,7 @@ const countToStart = _ => {
       else if(currentGameType === "textinputtype"){ // if textinputtype is selected
         document.getElementById("text-input-field").value = ""; // reset the input field
         document.addEventListener("keypress", textInputTypeKeyPress); // if text input type add event textInputTypeKeyPress
-        document.getElementById("text_input_submit_btn").addEventListener("click", _ => { // enter button event
-          textInputConfirmedAction();
-        });
-        document.getElementById("text-input-field").addEventListener("keydown", e => { // add event when enter key pressed
-          if(e.keyCode === 13){
-            textInputConfirmedAction();
-            keypressCount--; // discount enter key press from keypressCount
-            startType--; // discount enter key press from startType
-          }
-        });
+        document.getElementById("text_input_submit_btn").addEventListener("click", textInputConfirmedAction);
       }
     }
     timeLeft.classList.add("counting");
@@ -219,6 +203,26 @@ const timer = _ => {
   }, 10);
 };
 
+/* ----- (function) rank score ----- */
+const rank = (keys, score) => {
+  let text;
+  const typeAccurancy = Math.floor(Number(score/keys*100));
+  if(score < 100)
+    text = `Your rank is C. You are ${100 - score} characters away from B rank`;
+  else if(score < 180)
+    text = `Your rank is B. You are ${180 - score} characters away from A rank`;
+  else if(score < 250)
+    text = `Your rank is A. You are ${250 - score} characters away from S rank`;
+  else if(score >= 250)
+    text = "Your rank is S. Congratulations!";
+
+  return `
+    You hit ${score} 
+    characters.<br>${text}
+    <br>Your type accurancy is ${typeAccurancy}%
+  `;
+};
+
 /* ----- (function) keypress type typing function starts here ----- */
 const keyPress = e => {
   keypressCount++; // count keypress times
@@ -233,14 +237,23 @@ const keyPress = e => {
       textArea.classList.remove("mistyped");
       untypedField.classList.remove("mistyped");
     }, 100);
-    if(untypedField.textContent.substring(0, 1) === " ") // if the next key is space
-      document.querySelector(".alert_text").textContent = "input the space key"; // add in alert msg the textcontent
-    else // if the next key is not space
-      document.querySelector(".alert_text").textContent = `input the key ${untypedField.textContent.substring(0, 1)}`; // add the next key in alert msg textcontent
-    document.getElementById("alert_msg").classList.remove("hidden"); // remove hidden from alert msg
-    setTimeout(_=>{ // add hidden in alert msg class agter 1.5seconds
-      document.getElementById("alert_msg").classList.add("hidden");
-    },1500);
+    /* ----- diplay alert msg in case of mistype starts here ----- */
+    if(untypedField.textContent.substring(0, 1) === " "){ // if the next key is space
+      titleMsg.textContent = "input the space key";
+      titleMsg.classList.add("show");
+      setTimeout(_ => {
+        titleMsg.classList.remove("show");
+        titleMsg.textContent = "";
+      }, 1500);
+    } else { // if the next key is not space
+      titleMsg.textContent = `input the key ${untypedField.textContent.substring(0, 1)}`;
+      titleMsg.classList.add("show");
+      setTimeout(_ => {
+        titleMsg.classList.remove("show");
+        titleMsg.textContent = "";
+      }, 1500);
+    }
+    /* ----- diplay alert msg in case of mistype ends here ----- */
     return; // restart the loop
   }
   /* ----- if incorrect input action ends here ----- */
@@ -263,7 +276,9 @@ const keyPress = e => {
 
 /* ----- (function)  text type keypress function starts here ----- */
 const textInputTypeKeyPress = e => {
-  if(e.key){ // when key is pressed
+  if(e.keyCode === 13){
+    textInputConfirmedAction();
+  } else if(e.key){ // when key is pressed
     keypressCount++; // count keypressCount
     startType++; // startType
     if(!document.getElementById("text-input-field").blur()) // if text input field is not focused
@@ -275,13 +290,30 @@ const textInputTypeKeyPress = e => {
 /* ----- (function) game over action ----- */
 const gameOver = id => {
   doneTextList.push([typedField.textContent, parseFloat(startTime - 0).toFixed(2)]); // push the last typed text into done text list
-  document.removeEventListener("keypress", keyPress); // remove the keypress event listener
+  doneTextList.unshift([currentGameType, keypressCount, score, `${parseFloat(score/keypressCount).toFixed(2)*100}%`]); // shift the done text list
   clearInterval(id); // clear the timer
-  typedField.textContent = ""; // reset the typed field textcontent
   untypedField.textContent = "Game Over"; // update the untyped textcontent
   document.querySelector("input[type='text']").blur(); // unfocus the text input field
-  doneTextList.unshift([keypressCount, score, `${parseFloat(score/keypressCount).toFixed(2)*100}%`]); // shift the done text list
   timeLeft.classList.add("hidden"); // hide the timer
+  if(currentGameType === "keypresstype"){
+    document.removeEventListener("keypress", keyPress); // remove the keypress event listener
+    typedField.textContent = ""; // reset the typed field textcontent
+  } else if(currentGameType === "textinputtype"){
+    document.removeEventListener("keypress", textInputTypeKeyPress); // remove the keypress event listener
+    document.getElementById("text_input_submit_btn").removeEventListener("click", textInputConfirmedAction);
+    
+  }
+  console.log(doneTextList);
+  console.log(btnField.length);
+  btnField.innerHTML = `
+    <button style="display: flex; justify-content: center; align-items: center;" type="submit" id="retry_btn">
+      <span class="material-symbols-outlined">replay</span>
+      Retry
+    </button>
+  `;
+  titleMsg.innerHTML = `${rank(keypressCount, score)}<br>to see your score details, <a href='https://bangbros.com'>click here</a>`;
+  titleMsg.classList.add("show");
+  titleMsg.classList.add("final");
 };
 
 /* ----- (function) text input comfirmed action starts here ----- */

@@ -73,8 +73,8 @@ li:before {
 }
 
 li.li_effect:before {
-  border-right: 3px solid lightgreen;
-  border-bottom: 3px solid  lightgreen;
+  border-right: 3px solid green;
+  border-bottom: 3px solid  green;
   transition: .5s;
 }
 
@@ -196,7 +196,7 @@ main {
 /* ----- button area ----- */
 .btn_field {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 10px; 
   display: flex;
   justify-content: space-around;
 }
@@ -234,16 +234,20 @@ button {
   transition: 0;
 }
 
-.title_msgs {
+#title_msg {
   height: 0;
   opacity: 0;
   transition: 1s;
 }
 
-.title_msgs.show {
+#title_msg.show {
   opacity: .6;
   transition: 1s;
   height: 20px;
+}
+
+#title_msg.show.final {
+  height: auto;
 }
 
 /* ----- effect on access ----- */
@@ -342,21 +346,6 @@ label {
   justify-content: center;
   align-items: center;
   height: 50px;
-}
-
-#alert_msg {
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transition: 1s;
-}
-
-#alert_msg.hidden {
-  height: 0;
-  opacity: 0;
-  transition: .2s;
 }
 
 .alert_text {
