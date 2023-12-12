@@ -68,13 +68,13 @@ li:before {
   transform: rotate(50deg);
   width: 5px;
   height: 10px;
-  border-right: 3px solid lightgreen;
-  border-bottom: 3px solid  lightgreen;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid  #fff;
 }
 
 li.li_effect:before {
-  border-right: 3px solid red;
-  border-bottom: 3px solid  red;
+  border-right: 3px solid lightgreen;
+  border-bottom: 3px solid  lightgreen;
   transition: .5s;
 }
 
@@ -115,14 +115,8 @@ li.li_effect:before {
   position:absolute;
   bottom: 0;
   right: 0;
-  pointer-events: none;
-  opacity: .5;
-  cursor: pointer;
-}
-
-.check-window-close-btn.show {
   pointer-events: fill;
-  opacity: 1;
+  cursor: pointer;
 }
 
 /* ----- header area ----- */
@@ -183,6 +177,16 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 2.2em;
+}
+
+#text_area.correct_text {
+  background-color: lightgreen;
+  color: #fff;
+}
+
+#text_area.incorrect_text {
+  background-color: #f00;
+  color: #fff;
 }
 
 #text_area.mistyped {

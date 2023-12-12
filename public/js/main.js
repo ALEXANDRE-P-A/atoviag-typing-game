@@ -6,9 +6,7 @@ let startType;
 let endTime = 0;
 let keypressCount = 0;
 let score = 0;
-const titleMsgOne = document.getElementById("title_msg_one");
-const titleMsgTwo = document.getElementById("title_msg_two");
-const titleMsgs = document.querySelectorAll(".title_msgs");
+let keypressValue = 0;
 /* ----- initializing variables ends here ----- */
 
 /* ----- obtaining the required HTML elements starts here ----- */
@@ -46,6 +44,10 @@ const textList = [
 ];
 
 let doneTextList = [];
+
+const titleMsgOne = document.getElementById("title_msg_one");
+const titleMsgTwo = document.getElementById("title_msg_two");
+const titleMsgs = document.querySelectorAll(".title_msgs");
 /* ----- obtaining the required HTML elements ends here ----- */
 
 /* ----- page access action starts here ----- */
@@ -108,7 +110,6 @@ const checkEffect = _ => {
     if(itemNumber === checkItems.children.length - 1){
       setTimeout(_ => {
         gameStartBtn.disabled = false;
-        checkWindowCloseBtn.classList.add("show");
       }, checkIntervalTime);
       clearInterval(makeCheck);
     }
@@ -122,7 +123,6 @@ const disableCheckEffect = _ => {
   for(let i = 0;i < checkItems.children.length - 1; i++ )
     checkItems.children[i].classList.remove("li_effect");
   gameStartBtn.disabled = true;
-  checkWindowCloseBtn.classList.remove("show");
 };
 
 /* ----- (function) game count to start (when click start button) ----- */
@@ -170,8 +170,23 @@ const countToStart = _ => {
       document.querySelector("input[type='text']").focus();
       timer();
       createText();
-      if(currentGameType === "keypresstype"){
-        document.addEventListener("keypress", keypress);
+      if(currentGameType === "keypresstype") // if keypress type add event keyPress
+        document.addEventListener("keypress", keyPress);
+      else if(currentGameType === "textinputtype"){ // if textinputtype is selected
+        document.getElementById("text-input-field").value = ""; // reset the input field
+        document.addEventListener("keypress", textInputTypeKeyPress); // if text input type add event textInputTypeKeyPress
+        document.getElementById("text_input_submit_btn").addEventListener("click", _ => { // enter button event
+          keypressValue = 0; // reset keypressValue
+          textInputConfirmedAction();
+        });
+        document.getElementById("text-input-field").addEventListener("keydown", e => { // add event when enter key pressed
+          if(e.keyCode === 13){
+            textInputConfirmedAction();
+            keypressValue--; // discount enter key press from keypressValue
+            keypressCount--; // discount enter key press from keypressCount
+            startType--; // discount enter key press from startType
+          }
+        });
       }
     }
     timeLeft.classList.add("counting");
@@ -190,9 +205,9 @@ const createText = _ => {
   let rand = Math.floor(Math.random() * textList.length); // make a random index number
   untypedField.textContent = textList[rand]; // add in untyped text field a random inde text from text list 
   startTime = parseFloat(time).toFixed(2); // register the time the text appears
-  if(gameStartBtn.getAttribute("data-method") === "textinputtype"){
-    startType = 0;
-    console.log(startType);
+  if(currentGameType === "textinputtype"){ // if the game type is text input
+    startType = 0; // reset start type counter
+    document.getElementById("text-input-field").value = ""; // reset the text input
   }
 };
 
@@ -207,8 +222,8 @@ const timer = _ => {
   }, 10);
 };
 
-/* ----- (function) keypress type typing function  ----- */
-const keypress = e => {
+/* ----- (function) keypress type typing function starts here ----- */
+const keyPress = e => {
   keypressCount++; // count keypress times
   setTimeout(_ => { // reset the input field
     document.getElementById("keypress-type-field").value = "";
@@ -247,20 +262,54 @@ const keypress = e => {
   }
   /* ----- if untyped field is empty action ends here ----- */
 };
+/* ----- (function) keypress type typing function ends here ----- */
+
+/* ----- (function)  text type keypress function starts here ----- */
+const textInputTypeKeyPress = e => {
+  if(e.key){ // when key is pressed
+    keypressValue++; // count keypressValue
+    keypressCount++; // count keypressCount
+    startType++; // startType
+    if(!document.getElementById("text-input-field").blur()) // if text input field is not focused
+      document.getElementById("text-input-field").focus(); // focus text input field
+  }
+};
+/* ----- (function)  text type keypress function ends here ----- */
+
 /* ----- (function) game over action ----- */
 const gameOver = id => {
   doneTextList.push([typedField.textContent, parseFloat(startTime - 0).toFixed(2)]); // push the last typed text into done text list
-  document.removeEventListener("keypress", keypress); // remove the keypress event listener
+  document.removeEventListener("keypress", keyPress); // remove the keypress event listener
   clearInterval(id); // clear the timer
   typedField.textContent = ""; // reset the typed field textcontent
   untypedField.textContent = "Game Over"; // update the untyped textcontent
   document.querySelector("input[type='text']").blur(); // unfocus the text input field
   doneTextList.unshift([keypressCount, score, `${parseFloat(score/keypressCount).toFixed(2)*100}%`]); // shift the done text list
   timeLeft.classList.add("hidden"); // hide the timer
-  console.log(doneTextList);
 };
 
-/* ----- ----- ----- ----- ----- functions ends here ----- ----- ----- ----- ----- */
+/* ----- (function) text input comfirmed action starts here ----- */
+const textInputConfirmedAction = _ => {
+  let accurancyCheck = untypedField.textContent === document.getElementById("text-input-field").value; // check the input and text accurancy
+  let textLength = untypedField.textContent.length; // text length
+  let typeCheck = startType >= textLength;
+  if(accurancyCheck && typeCheck){
+    score += textLength; // count score
+    textArea.classList.add("correct_text");
+    setTimeout(_ => { // remove mistyped class after 0.1seconds
+      textArea.classList.remove("correct_text");
+    }, 100);
+    createText();
+  } else {
+    textArea.classList.add("incorrect_text");
+    setTimeout(_ => { // remove mistyped class after 0.1seconds
+      textArea.classList.remove("incorrect_text");
+    }, 100);
+    document.getElementById("text-input-field").value = "";
+  }
+};
+/* ----- (function) text input comfirmed action starts here ----- */
+/* ----- ----- ----- functions ends here ----- ----- ----- */
 
 /* ----- ----- ----- modal window action starts here ----- ----- ----- */
 /* ----- keypress type button action ----- */
@@ -294,6 +343,7 @@ gameStartBtn.addEventListener("click", _ => {
   removeRules();
   countToStart();
   currentGameType = gameStartBtn.getAttribute("data-method");
+  keypressCount = 0;
 });
 /* ----- game start action ends here ----- */
 /* ----- ----- ----- modal window action ends here ----- ----- ----- */
