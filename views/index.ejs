@@ -82,5 +82,9 @@
   <%- include("./_share/javascripts.ejs") %>
   <!-- main page action js -->
   <script type="text/javascript" src="/public/js/main.js"></script>
+  <script type="module">
+    import { opening } from "/public/js/opening.mjs";
+    opening();
+  </script>
 </body>
 </html>
