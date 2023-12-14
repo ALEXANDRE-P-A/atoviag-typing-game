@@ -14,7 +14,7 @@
     </div>
     <div class="modal-window-btn-area">
       <button id="game-start-btn" style="display: flex; justify-content: center; align-items: center; font-size: 1.3em;" disabled>
-        <span class="material-symbols-outlined">start</span>
+        <span class="material-symbols-outlined">play_circle</span>
         Start
       </button>
       <span class="material-symbols-outlined check-window-close-btn">disabled_by_default</span>
@@ -81,10 +81,6 @@
   <%- include("./_share/footer.ejs") %>
   <%- include("./_share/javascripts.ejs") %>
   <!-- main page action js -->
-  <script type="text/javascript" src="/public/js/main.js"></script>
-  <script type="module">
-    import { opening } from "/public/js/opening.mjs";
-    opening();
-  </script>
+  <script type="module" src="/public/js/main.js"></script>
 </body>
 </html>
