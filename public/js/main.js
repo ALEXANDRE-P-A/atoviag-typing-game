@@ -40,68 +40,66 @@ const textList = [
 ];
 
 let doneTextList = [];
-
-const titleMsg = document.getElementById("title_msg");
 /* ----- obtaining the required HTML elements ends here ----- */
 
 /* ----- ----- ----- functions starts here ----- ----- ----- */
 /* ----- (function) game count to start (when click start button) ----- */
 const timeLeft = document.getElementById("time_left");
 
-// const countToStart = _ => {
-//   /* ----- remove title messages starts here ----- */
-//   titleMsg.classList.remove("show");
-//   titleMsg.textContent = "";
-//   /* ----- remove title messages ends here ----- */
-//   let toStartTime = 3000;
-//   timeLeft.classList.remove("hidden");
-//   typedField.textContent = "";
-//   untypedField.textContent =  "- texts appear here -";
-//   btnField = document.querySelector(".btn_field");
-//   if(gameStartBtn.getAttribute("data-method") === "keypresstype"){
-//     btnField.innerHTML = `
-//       <div class="keypress-type-area">
-//         <span class="material-symbols-outlined">double_arrow</span>
-//         <input type="text" id="keypress-type-field" class="form-control">
-//         <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
-//       <div>
-//     `;
-//   } else if(gameStartBtn.getAttribute("data-method") === "textinputtype"){
-//     btnField.innerHTML = `
-//       <div style="width: 100%; display: flex; justify-content: center; align-items: center">
-//         <input type="text" id="text-input-field" class="form-control">
-//         <button type="submit" id="text_input_submit_btn">
-//           <span class="material-symbols-outlined">check</span>
-//           Check
-//         </button>
-//       </div>
-//     `;
-//   }
-//   let intervalToStart = setInterval(_ => {
-//     timeLeft.textContent = toStartTime/1000;
-//     if(toStartTime <= 0){
-//       timeLeft.textContent = (currentGameType === "keypresstype") ? "60" : "75" ;
-//       clearInterval(intervalToStart);
-//       setTimeout(_ => {
-//       }, 500);
-//       document.querySelector("input[type='text']").focus();
-//       timer();
-//       createText();
-//       if(currentGameType === "keypresstype") // if keypress type add event keyPress
-//         document.addEventListener("keypress", keyPress);
-//       else if(currentGameType === "textinputtype"){ // if textinputtype is selected
-//         document.getElementById("text-input-field").value = ""; // reset the input field
-//         document.addEventListener("keypress", textInputTypeKeyPress); // if text input type add event textInputTypeKeyPress
-//         document.getElementById("text_input_submit_btn").addEventListener("click", textInputConfirmedAction);
-//       }
-//     }
-//     timeLeft.classList.add("counting");
-//     setTimeout(_ => {
-//       timeLeft.classList.remove("counting");
-//     }, 500);
-//     toStartTime -= 1000;
-//   }, 1000);
-// };
+const countToStart = _ => {
+  /* ----- remove title messages starts here ----- */
+  titleMsg.classList.remove("show");
+  titleMsg.textContent = "";
+  /* ----- remove title messages ends here ----- */
+  let toStartTime = 3000;
+  timeLeft.classList.remove("hidden");
+  typedField.textContent = "";
+  untypedField.textContent =  "- texts appear here -";
+  btnField = document.querySelector(".btn_field");
+  if(gameStartBtn.getAttribute("data-method") === "keypresstype"){
+    btnField.innerHTML = `
+      <div class="keypress-type-area">
+        <span class="material-symbols-outlined">double_arrow</span>
+        <input type="text" id="keypress-type-field" class="form-control">
+        <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
+      <div>
+    `;
+  } else if(gameStartBtn.getAttribute("data-method") === "textinputtype"){
+    btnField.innerHTML = `
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center">
+        <input type="text" id="text-input-field" class="form-control">
+        <button type="submit" id="text_input_submit_btn">
+          <span class="material-symbols-outlined">check</span>
+          Check
+        </button>
+      </div>
+    `;
+  }
+  let intervalToStart = setInterval(_ => {
+    timeLeft.textContent = toStartTime/1000;
+    if(toStartTime <= 0){
+      timeLeft.textContent = (currentGameType === "keypresstype") ? "60" : "75" ;
+      clearInterval(intervalToStart);
+      setTimeout(_ => {
+      }, 500);
+      document.querySelector("input[type='text']").focus();
+      timer();
+      createText();
+      if(currentGameType === "keypresstype") // if keypress type add event keyPress
+        document.addEventListener("keypress", keyPress);
+      else if(currentGameType === "textinputtype"){ // if textinputtype is selected
+        document.getElementById("text-input-field").value = ""; // reset the input field
+        document.addEventListener("keypress", textInputTypeKeyPress); // if text input type add event textInputTypeKeyPress
+        document.getElementById("text_input_submit_btn").addEventListener("click", textInputConfirmedAction);
+      }
+    }
+    timeLeft.classList.add("counting");
+    setTimeout(_ => {
+      timeLeft.classList.remove("counting");
+    }, 500);
+    toStartTime -= 1000;
+  }, 1000);
+};
 
 /* ----- (function) display random text ----- */
 const typedText = document.getElementById("typed");

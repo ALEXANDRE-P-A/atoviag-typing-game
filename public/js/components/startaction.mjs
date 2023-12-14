@@ -7,12 +7,11 @@ const gameStartBtn = document.getElementById("game-start-btn");
 
 const startAction = _ => {
   const appType = gameStartBtn.getAttribute("data-method");
-  const keypressCount = 0;
   gameStartBtn.disabled = true;
   rulesUncheckEffect();
   removeRules();
   checkWindow.classList.add("hidden");
-  counToStart(appType, keypressCount);
+  counToStart(appType);
 };
 
 export { startAction };
