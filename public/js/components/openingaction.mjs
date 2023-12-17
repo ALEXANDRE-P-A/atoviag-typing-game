@@ -12,7 +12,7 @@ const opening = _ => {
   setTimeout(_ => {
     titleMsg.classList.add("show");
     titleMsg.textContent = "Application designed specially to measure and enhance your typing skills";
-  }, 3000);
+  }, 1000);
 
   typedField.textContent += untypedField.textContent.substring(0,1);
   untypedField.textContent = untypedField.textContent.substring(1);

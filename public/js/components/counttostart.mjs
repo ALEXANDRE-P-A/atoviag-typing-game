@@ -14,14 +14,14 @@ const counToStart = (appType) => {
   timeLeft.classList.remove("hidden");
 
   typedField.textContent = "";
-  untypedField.textContent =  "- text displays here -";
+  untypedField.textContent =  "text displays here";
 
   if(appType === "keypress"){
     btnField.innerHTML = `
       <div class="keypress-type-area">
-        <span class="material-symbols-outlined">double_arrow</span>
-        <input type="text" id="keypress-type-field" class="form-control">
-        <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
+      <span class="material-symbols-outlined">keyboard_double_arrow_right</span>
+      <input type="text" id="keypress-type-field" class="form-control">
+      <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
       <div>
     `;
   } else if(appType === "textinput"){
@@ -46,11 +46,9 @@ const counToStart = (appType) => {
       setTimeout(_ => {
         timeLeft.classList.remove("counting");
       }, 500);
-    }
-    
-    if(toStartTime <= 0){
+    } else if(toStartTime <= 0){
       clearInterval(intervalToStart);
-      start();
+      start(appType);
     }
 
     toStartTime -= 1000;
