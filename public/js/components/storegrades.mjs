@@ -1,7 +1,7 @@
-const gradesArray = [];
+let gradesArray = [];
 
 const initializeGrades = _ => {
-  gradesArray = [];
+  gradesArray = new Array();
 };
 
 const storeTextAndTime = (text, time) => {

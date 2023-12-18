@@ -4,8 +4,10 @@ import { keyPress } from "./keypress.mjs";
 import { textInputKeypressAddEventListener, textInputSubmitBtnAddEventListener } from "./textinput.mjs";
 import { initializeKeypressCount } from "./keypresscount.mjs";
 import { initializeScore } from "./scorecount.mjs";
+import { initializeGrades } from "./storegrades.mjs";
 
 let start = apptype => {
+  initializeGrades();
   initializeKeypressCount();
   initializeScore();
   timer();

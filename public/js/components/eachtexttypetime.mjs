@@ -13,8 +13,13 @@ const getTypedTime = _ => {
   return parseFloat(startTypetime - endTypeTime).toFixed(2);
 };
 
+const getStartTypeTime = _ => {
+  return parseFloat(startTypetime).toFixed(2);
+};
+
 export { 
   registStartTypeTime,
   registEndTypeTime,
-  getTypedTime
+  getTypedTime,
+  getStartTypeTime
 }; 

@@ -3,6 +3,9 @@ import { getScore } from "./scorecount.mjs";
 import { keyPress } from "./keypress.mjs";
 import { textInputKeypressRemoveEventListener, textInputSubmitBtnRemoveEventListener } from "./textinput.mjs";
 import { rank } from "./rank.mjs";
+import { keypressFinalTextJudgement, textInputFinalTextJudgement } from "./finaltextjudgement.mjs";
+import { getStartTypeTime } from "./eachtexttypetime.mjs";
+import { getGrades } from "./storegrades.mjs";
 
 const titleMsg = document.getElementById("title_msg");
 const timeLeft = document.getElementById("time_left");
@@ -19,15 +22,25 @@ const gameOver = id => {
   titleMsg.textContent = "";
   timeLeft.classList.add("hidden");
 
-  typedField.textContent = "";
-  untypedField.textContent = "";
-
   if(gameStartBtn.getAttribute("data-method") === "keypress"){
     document.removeEventListener("keypress", keyPress);
+    keypressFinalTextJudgement(
+      typedField.textContent,
+      untypedField.textContent,
+      getStartTypeTime()
+    );
   } else if(gameStartBtn.getAttribute("data-method") === "textinput"){
     textInputKeypressRemoveEventListener();
     textInputSubmitBtnRemoveEventListener();
+    textInputFinalTextJudgement(
+      untypedField.textContent,
+      document.querySelector("input[type='text']").value,
+      getStartTypeTime()
+    );
   }
+
+  typedField.textContent = "";
+  untypedField.textContent = "";
 
   btnField.innerHTML = `
     <button onclick="location.href='#'">
@@ -41,6 +54,8 @@ const gameOver = id => {
   untypedField.textContent = "Game Over";
   titleMsg.classList.add("final");
   titleMsg.innerHTML = `${rank(getKeypressCount(), getScore())}`;
+
+  console.log(getGrades());
 };
 
 export { gameOver };

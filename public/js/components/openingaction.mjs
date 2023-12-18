@@ -4,15 +4,15 @@ const typedField = document.getElementById("typed");
 const untypedField = document.getElementById("untyped");
 const textArea = document.getElementById("text_area");
 
+const addOpeningMsg = _ => {
+  titleMsg.classList.add("show");
+  titleMsg.textContent = "Application designed specially to measure and enhance your typing skills";
+};
+
 const opening = _ => {
 
   typedField.textContent = "";
   untypedField.textContent = title;
-
-  setTimeout(_ => {
-    titleMsg.classList.add("show");
-    titleMsg.textContent = "Application designed specially to measure and enhance your typing skills";
-  }, 1000);
 
   typedField.textContent += untypedField.textContent.substring(0,1);
   untypedField.textContent = untypedField.textContent.substring(1);
@@ -28,9 +28,10 @@ const opening = _ => {
         typedField.textContent = "";
         untypedField.textContent = title;
         clearInterval(openingActionFinish);
+        addOpeningMsg();
       }, 100);
     }
-  }, 75); 
+  }, 75);
 };
 
 export { opening };
