@@ -248,6 +248,13 @@ button {
   height: 20px;
 }
 
+#title_msg.final {
+  font-size: .55em;
+  opacity: .8;
+  transition: 1s;
+  height: auto;
+}
+
 #title_msg.show.final {
   height: auto;
 }

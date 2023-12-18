@@ -3,18 +3,23 @@ import { addTypedTextLength } from "./scorecount.mjs";
 import { getTime } from "./timer.mjs";
 import { registEndTypeTime, getTypedTime } from "./eachtexttypetime.mjs";
 import { storeTextAndTime, getGrades } from "./storegrades.mjs";
+import { keypressPlus } from "./keypresscount.mjs";
+
+let typeCounter = 0;
 
 const untypedField = document.getElementById("untyped");
 const textArea = document.getElementById("text_area");
 const titleMsg = document.getElementById("title_msg");
 
 const alert = inputText => {
-  titleMsg.textContent = `✖ ${inputText}`;
-  titleMsg.classList.add("show");
-  setTimeout(_ => {
-    titleMsg.classList.remove("show");
-    titleMsg.textContent = "";
-  }, 1500);
+  if(getTime() >= 2){
+    titleMsg.textContent = `✖ ${inputText}`;
+    titleMsg.classList.add("show");
+    setTimeout(_ => {
+      titleMsg.classList.remove("show");
+      titleMsg.textContent = "";
+    }, 1500);
+  }
 };
 
 const textInputConfirmedAction = typeCounter => {
@@ -40,4 +45,48 @@ const textInputConfirmedAction = typeCounter => {
   }
 };
 
-export { textInputConfirmedAction };
+const textInputKeypressAddEventListener = _ => {
+  document.addEventListener("keypress", e => {
+    if(e.keyCode === 13){
+      textInputConfirmedAction(typeCounter);
+      typeCounter = 0;
+      return;
+    }
+    keypressPlus();
+    typeCounter++;
+  });
+};
+
+const textInputSubmitBtnAddEventListener = _ => {
+  document.getElementById("text_input_submit_btn").addEventListener("click", _ => { 
+    textInputConfirmedAction(typeCounter)
+    typeCounter = 0;
+  });
+};
+
+const textInputKeypressRemoveEventListener = _ => {
+  document.addEventListener("keypress", e => {
+    if(e.keyCode === 13){
+      textInputConfirmedAction(typeCounter);
+      typeCounter = 0;
+      return;
+    }
+    keypressPlus();
+    typeCounter++;
+  });
+};
+
+const textInputSubmitBtnRemoveEventListener = _ => {
+  document.getElementById("text_input_submit_btn").addEventListener("click", _ => { 
+    textInputConfirmedAction(typeCounter)
+    typeCounter = 0;
+  });
+};
+
+export { 
+  textInputConfirmedAction,
+  textInputKeypressAddEventListener,
+  textInputSubmitBtnAddEventListener,
+  textInputKeypressRemoveEventListener,
+  textInputSubmitBtnRemoveEventListener
+};
