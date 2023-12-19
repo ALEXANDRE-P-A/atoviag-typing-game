@@ -12,28 +12,23 @@ const titleMsg = document.getElementById("title_msg");
 
 const alert = keyName => {
   if(getTime() >= 2){
-    if(keyName === " "){
+    if(keyName === " ")
       titleMsg.textContent = "press the space key";
-      titleMsg.classList.add("show");
-      setTimeout(_ => {
-        titleMsg.classList.remove("show");
-        titleMsg.textContent = "";
-      }, 1500);
-    } else {
+    else 
       titleMsg.textContent = `press the key ${keyName}`;
-      titleMsg.classList.add("show");
-      setTimeout(_ => {
-        titleMsg.classList.remove("show");
-        titleMsg.textContent = "";
-      }, 1500);
-    }
+    titleMsg.classList.add("show");
+    setTimeout(_ => {
+      titleMsg.classList.remove("show");
+      titleMsg.textContent = "";
+    }, 1500);
   }
 };
 
 const keyPress = e => {
   keypressPlus();
+
   if(e.key !== untypedField.textContent.substring(0, 1)){
-    setTimeout(_ => { // reset the input field
+    setTimeout(_ => {
       document.getElementById("keypress-type-field").value = "";
     }, 100);
     alert(untypedField.textContent.substring(0, 1));
@@ -49,7 +44,7 @@ const keyPress = e => {
   scorePlus();
   typedField.textContent += untypedField.textContent.substring(0,1);
   untypedField.textContent = untypedField.textContent.substring(1);
-  setTimeout(_ => { // reset the input field
+  setTimeout(_ => {
     document.getElementById("keypress-type-field").value = "";
   }, 100);
 

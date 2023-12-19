@@ -7,9 +7,6 @@
 </head>
 <body>
   <!-- ----- keypress type modal window starts here ----- -->
-  <!-- code for test starts here -->
-  <p id="test"></p>
-  <!-- code for test ends here -->
   <div id="check-window" class="hidden">
     <p>Please check the rules before you start</p>
     <div>
@@ -85,5 +82,16 @@
   <%- include("./_share/javascripts.ejs") %>
   <!-- main page action js -->
   <script type="module" src="/public/js/main.js"></script>
+  <% if(locals.user) {%>
+    <script type="module">
+      import { storeUserInfo } from "/public/js/components/storegrades.mjs";
+
+      storeUserInfo(
+        "<%= locals.user.id %>",
+        "<%= locals.user.email %>",
+        `${navigator.userAgent}`,
+      );
+    </script>
+  <% } %>
 </body>
 </html>

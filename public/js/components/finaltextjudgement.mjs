@@ -1,6 +1,9 @@
 import { storeFinalTextAndTime } from "./storegrades.mjs";
 
 const keypressFinalTextJudgement = (typed, untyped, time) => {
+  if(typed === "")
+    return;
+
   let toConcat = "";
   for(let i = 0;i < untyped.length;i++){
     toConcat += "_";
@@ -10,6 +13,9 @@ const keypressFinalTextJudgement = (typed, untyped, time) => {
 };
 
 const textInputFinalTextJudgement = (text, input, time) => {
+  if(input === "")
+    return;
+  
   let toStore = "";
   let untyped = "";
   for(let i = 0;i < text.length;i++){

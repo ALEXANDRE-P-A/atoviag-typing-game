@@ -124,11 +124,19 @@ li.li_effect:before {
 /* ----- header area ----- */
 header {
   width: 100%;
+  height: auto;
+  pointer-events: all;
   background-color: #333a40;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: .9em;
+}
+
+header.onkeyboard {
+  margin-top: 155px;
+  height: 0;
+  pointer-events: none;
 }
 
 /* ----- navigation ----- */
