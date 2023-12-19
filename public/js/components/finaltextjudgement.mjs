@@ -1,4 +1,4 @@
-import { storeTextAndTime } from "./storegrades.mjs";
+import { storeFinalTextAndTime } from "./storegrades.mjs";
 
 const keypressFinalTextJudgement = (typed, untyped, time) => {
   let toConcat = "";
@@ -6,13 +6,22 @@ const keypressFinalTextJudgement = (typed, untyped, time) => {
     toConcat += "_";
   }
   const toStore = typed + toConcat;
-  storeTextAndTime(toStore, time);
+  storeFinalTextAndTime(toStore, time, untyped);
 };
 
 const textInputFinalTextJudgement = (text, input, time) => {
-  console.log(`text : ${text}`);
-  console.log(`input : ${input}`);
-  console.log(`time : ${time}`);
+  let toStore = "";
+  let untyped = "";
+  for(let i = 0;i < text.length;i++){
+    if(text[i] === input[i])
+      toStore += text[i];
+    else {
+      toStore += "_";
+      untyped += text[i];
+    }
+  }
+
+  storeFinalTextAndTime(toStore, time, untyped);
 };
 
 export { 

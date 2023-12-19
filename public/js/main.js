@@ -1,6 +1,8 @@
 import { opening } from "./components/openingaction.mjs";
 import { keypressTypeRules, textinputTypeRules } from "./components/rules.mjs";
 import { appRulesWindowAction } from "./components/appselectaction.mjs";
+import { getDeviceinfo } from "./components/getdeviceinfo.mjs";
+
 
 let keypressCount = 0;
 
@@ -15,3 +17,5 @@ keypresstypeBtn.addEventListener("click",_ => { appRulesWindowAction(keypressTyp
 
 /* ----- textinput type button action ----- */
 textinputtypeBtn.addEventListener("click",_ => { appRulesWindowAction(textinputTypeRules, "textinput") });
+
+getDeviceinfo();
