@@ -1,11 +1,16 @@
 let gradesArray = [];
-let user_id, user_email, user_device, play_date;
+let user_id, user_email, user_device, play_date, rank, keypress_time, score, type_accurancy;
+let user_record = {};
 
 const initializeUserInfo = _ => {
   user_id = null;
   user_email = null;
   play_date = null;
   user_device = null;
+  rank = null,
+  keypress_time = null,
+  score = null,
+  type_accurancy = null
 };
 
 const initializeGrades = _ => {
@@ -18,8 +23,13 @@ const storeUserInfo = (id, email, device) => {
   user_email = email;
   user_device = device;
   play_date = new Date();
-  gradesArray.push([user_id, user_email, user_device, play_date]);
-  console.log([user_id, user_email, user_device, play_date]);
+
+  user_record = {
+    id: user_id,
+    email: user_email,
+    device: user_device,
+    date: play_date
+  };
 };
 
 const storeTextAndTime = (text, time) => {
@@ -30,8 +40,16 @@ const storeFinalTextAndTime = (typed, time, untyped) => {
   gradesArray.push([typed, time, untyped]);
 };
 
-const getGrades = _ => {
-  return gradesArray;
+const storeRank = (rank, keypresstime, score, typeaccurancy) => {
+  user_record.rank = rank;
+  user_record.keypress_time = keypresstime;
+  user_record.score = score;
+  user_record.type_accurancy = typeaccurancy;
+};
+
+const concatUserGrades = _ => {
+  user_record.gradesArray = gradesArray;
+  console.log(user_record);
 };
 
 export { 
@@ -40,5 +58,6 @@ export {
   initializeGrades,
   storeTextAndTime,
   storeFinalTextAndTime,
-  getGrades
+  storeRank,
+  concatUserGrades
 };

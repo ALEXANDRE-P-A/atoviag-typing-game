@@ -117,8 +117,6 @@ li.li_effect:before {
   right: 0;
   pointer-events: fill;
   cursor: pointer;
-  background-color: #000;
-  color: #fff;
 }
 
 /* ----- header area ----- */
@@ -279,17 +277,21 @@ button {
 }
 
 label {
+  text-align: left;
+}
+
+input, select {
   text-align: center;
 }
 
 .pass_input_area {
   display: flex; 
   justify-content: center;
+  position: relative;
 }
 
 .pass_input {
-  border-right: none;
-  border-radius: .25rem 0 0 .25rem;
+  border-radius: .25rem;
 }
 
 .visibility {
@@ -302,6 +304,10 @@ label {
   font-size: 2em;
   border-left: none;
   border-radius: 0  .25rem .25rem 0;
+  position: absolute;
+  right: 12px;
+  border: none;
+  border-radius: 0;
 }
 
 .pass_btn_area {
@@ -442,13 +448,6 @@ label {
   .pass_input {
     border-right: 1px solid #ced4da;
     border-radius: .25rem;
-  }
-
-  .visibility {
-    position: absolute;
-    right: 12px;
-    border: none;
-    border-radius: 0;
   }
 
   ::placeholder {

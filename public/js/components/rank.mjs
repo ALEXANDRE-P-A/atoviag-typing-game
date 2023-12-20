@@ -17,4 +17,18 @@ const rank = (keys, score) => {
   `;
 };
 
-export { rank };
+const getRank = score => {
+  if(score < 100)
+    return "C";
+  else if(score < 180)
+    return "B";
+  else if(score < 250)
+    return "A";
+  else if(score >= 250)
+    return "S";
+};
+
+export { 
+  rank,
+  getRank
+};

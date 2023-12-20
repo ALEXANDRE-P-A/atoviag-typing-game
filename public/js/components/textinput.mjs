@@ -2,7 +2,7 @@ import { createText } from "./createtext.mjs";
 import { addTypedTextLength } from "./scorecount.mjs";
 import { getTime } from "./timer.mjs";
 import { registEndTypeTime, getTypedTime } from "./eachtexttypetime.mjs";
-import { storeTextAndTime, getGrades } from "./storegrades.mjs";
+import { storeTextAndTime } from "./storegrades.mjs";
 import { keypressPlus } from "./keypresscount.mjs";
 
 let typeCounter = 0;
@@ -43,6 +43,7 @@ const textInputConfirmedAction = typeCounter => {
     alert(document.getElementById("text-input-field").value);
     document.getElementById("text-input-field").value = "";
   }
+  document.getElementById("text-input-field").focus();
 };
 
 const textInputKeypressAddEventListener = _ => {

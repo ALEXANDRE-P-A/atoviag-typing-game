@@ -2,10 +2,10 @@ import { getKeypressCount } from "./keypresscount.mjs";
 import { getScore } from "./scorecount.mjs";
 import { keyPress } from "./keypress.mjs";
 import { textInputKeypressRemoveEventListener, textInputSubmitBtnRemoveEventListener } from "./textinput.mjs";
-import { rank } from "./rank.mjs";
+import { rank, getRank } from "./rank.mjs";
 import { keypressFinalTextJudgement, textInputFinalTextJudgement } from "./finaltextjudgement.mjs";
 import { getStartTypeTime } from "./eachtexttypetime.mjs";
-import { getGrades } from "./storegrades.mjs";
+import { storeRank, concatUserGrades } from "./storegrades.mjs";
 
 const titleMsg = document.getElementById("title_msg");
 const timeLeft = document.getElementById("time_left");
@@ -43,7 +43,7 @@ const gameOver = id => {
   untypedField.textContent = "";
 
   btnField.innerHTML = `
-    <button onclick="location.href='#'">
+    <button onclick="location.href='/'">
       <span class="btn_inside">
         <span class="material-symbols-outlined">replay</span>
         <span class="btn_text">&nbsp;Replay</span>
@@ -55,7 +55,14 @@ const gameOver = id => {
   titleMsg.classList.add("final");
   titleMsg.innerHTML = `${rank(getKeypressCount(), getScore())}`;
 
-  console.log(getGrades());
+  storeRank(
+    getRank(getScore()),
+    getKeypressCount(),
+    getScore(),
+    `${Math.floor(Number(getScore()/getKeypressCount()*100))}%`
+  );
+
+  console.log(concatUserGrades());
 };
 
 export { gameOver };
