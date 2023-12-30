@@ -25,5 +25,6 @@ router.use("/signup", require("./signup.js"));
 router.use("/certify", require("./certify.js"));
 router.use("/signin", require("./signin.js"));
 router.use("/passwordchange", require("./passwordchange.js"));
+router.use("/textlist", require("./textlist.js"));
 
 module.exports = router;

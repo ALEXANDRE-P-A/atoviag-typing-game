@@ -40,6 +40,10 @@ body {
   font-size: 12px;
 }
 
+#check-window.width_fit-content {
+  width: fit-content;
+}
+
 /* ----- Title of modal window when displayed ----- */
 #check-window p {
   text-align: center;
@@ -53,12 +57,29 @@ body {
   flex-wrap: wrap;
 }
 
-li{
+#check-window div.center{
+  justify-content: center;
+}
+
+#check-window ol.hidden {
+  display: none;
+}
+
+#check-window ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.2em;
+  padding: 0;
+}
+
+#check-window ol li{
   position: relative;
   padding-left: 5px;
 }
 
-li:before {
+#check-window ol li:before {
   content: "";
   position: absolute;
   top: .1em;
@@ -72,9 +93,9 @@ li:before {
   border-bottom: 3px solid  #fff;
 }
 
-li.li_effect:before {
-  border-right: 3px solid green;
-  border-bottom: 3px solid  green;
+#check-window ol li.li_effect:before {
+  border-right: 3px solid lightgreen;
+  border-bottom: 3px solid  lightgreen;
   transition: .5s;
 }
 
@@ -377,6 +398,31 @@ input, select {
   color: #f00;
 }
 
+.score_check {
+  color: #007bff;
+}
+
+/* ----- score window elements ----- */
+#check-window > div > ul {
+  text-align: center;
+  margin: 0;
+}
+
+/* ----- score details table ----- */
+.score_details_table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.score_details_table th, .score_details_table td {
+  border: 1px solid #000;
+}
+
+/* ----- score window check button ----- */
+.score_check.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 5000, 'GRAD' 0, 'opsz' 24;
+}
+
 @media screen and (max-width: 767px) {
   /* ----- whole body SP ----- */
   body {
@@ -396,7 +442,7 @@ input, select {
   }
 
   /* ----- Area of ​​confirmation items in modal window when displayed SP ----- */
-  #check-window div, #check-window ol {
+  #check-window div, #check-window ol, #check-window ul {
     width: 90%;
     flex-direction: column;
     margin: 15px auto;

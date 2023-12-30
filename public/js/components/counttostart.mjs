@@ -1,4 +1,5 @@
 import { start } from "./start.mjs";
+import { storePlayType } from "./storegrades.mjs";
 
 const titleMsg = document.getElementById("title_msg");
 const timeLeft = document.getElementById("time_left");
@@ -15,6 +16,8 @@ const counToStart = (appType) => {
 
   typedField.textContent = "";
   untypedField.textContent =  "text displays here";
+
+  storePlayType(appType);
 
   if(appType === "keypress"){
     btnField.innerHTML = `

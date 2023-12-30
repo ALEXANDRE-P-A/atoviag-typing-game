@@ -1,9 +1,17 @@
-const textList =  [
-  "I have a pen","Hello World","Typing App","How are you?","Pien Pien","Paohn Paohn",
-  "I am sad!","GAL PEACE","NAETA","One Chance","KUSA!","TikTok","Twitter","Instagram",
-  "Google","Amazon","Facebook","Apple","YouTube","Orkut","ICQ","UOL",
-  "DIOGO","SOPHIA","YASMIM","ISABELLA","ARTHUR","LARISSA","Isabella","We are the best Sisters!",
-  "I love candy","Sinderella Man","POP CORN","BTS","Black Pink","AKB48"
-];
+const fetchTextlist = async _ => {
+  let list = [];
+  await fetch("/textlist")
+    .then(data => data.json())
+    .then(res => {
+      let i = 0;
+      while(res.split(",")[i] !== undefined){
+        list.push(res.split(",")[i]);
+        i++
+      }
+    });
+  return list;
+};
+
+const textList = await fetchTextlist();
 
 export { textList };

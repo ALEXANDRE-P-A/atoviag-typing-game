@@ -32,6 +32,10 @@ const storeUserInfo = (id, email, device) => {
   };
 };
 
+const storePlayType = type => {
+  user_record.play_type = type;
+};
+
 const storeTextAndTime = (text, time) => {
   gradesArray.push([text, time]);
 };
@@ -49,15 +53,20 @@ const storeRank = (rank, keypresstime, score, typeaccurancy) => {
 
 const concatUserGrades = _ => {
   user_record.gradesArray = gradesArray;
-  console.log(user_record);
+};
+
+const getUserRecord = _ => {
+  return user_record;
 };
 
 export { 
   initializeUserInfo,
   storeUserInfo,
   initializeGrades,
+  storePlayType,
   storeTextAndTime,
   storeFinalTextAndTime,
   storeRank,
-  concatUserGrades
+  concatUserGrades,
+  getUserRecord
 };

@@ -1,6 +1,5 @@
 import { opening } from "./components/openingaction.mjs";
-import { keypressTypeRules, textinputTypeRules } from "./components/rules.mjs";
-import { appRulesWindowAction } from "./components/appselectaction.mjs";
+import { keypressTypeWindowAction, textInputTypeWindowAction } from "./components/appselectaction.mjs";
 
 const header = document.querySelector("header");
 const keypresstypeBtn = document.getElementById("keypresstype_btn");
@@ -11,10 +10,10 @@ const titleMsg = document.getElementById("title_msg");
 opening();
 
 /* ----- keypress type button action ----- */
-keypresstypeBtn.addEventListener("click",_ => { appRulesWindowAction(keypressTypeRules, "keypress") });
+keypresstypeBtn.addEventListener("click", keypressTypeWindowAction);
 
 /* ----- textinput type button action ----- */
-textinputtypeBtn.addEventListener("click",_ => { appRulesWindowAction(textinputTypeRules, "textinput") });
+textinputtypeBtn.addEventListener("click", textInputTypeWindowAction);
 
 /* ----- Processing to prevent the main part 
         of the screen from being hidden when 

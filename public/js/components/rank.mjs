@@ -11,9 +11,9 @@ const rank = (keys, score) => {
     text = "Your rank is S. Congratulations!";
 
   return `
-    You hit ${score} 
-    characters.<br>${text}
-    <br>Your type accurancy is ${typeAccurancy}%
+    You hit ${score} characters<br>
+    ${text}<br>
+    Your type accurancy is ${typeAccurancy}%
   `;
 };
 

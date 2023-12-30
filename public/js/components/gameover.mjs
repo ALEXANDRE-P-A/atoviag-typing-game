@@ -5,7 +5,8 @@ import { textInputKeypressRemoveEventListener, textInputSubmitBtnRemoveEventList
 import { rank, getRank } from "./rank.mjs";
 import { keypressFinalTextJudgement, textInputFinalTextJudgement } from "./finaltextjudgement.mjs";
 import { getStartTypeTime } from "./eachtexttypetime.mjs";
-import { storeRank, concatUserGrades } from "./storegrades.mjs";
+import { storeRank, concatUserGrades, getUserRecord } from "./storegrades.mjs";
+import { showScore } from "./showscore.mjs";
 
 const titleMsg = document.getElementById("title_msg");
 const timeLeft = document.getElementById("time_left");
@@ -62,7 +63,9 @@ const gameOver = id => {
     `${Math.floor(Number(getScore()/getKeypressCount()*100))}%`
   );
 
-  console.log(concatUserGrades());
+  concatUserGrades();
+
+  showScore();
 };
 
 export { gameOver };
