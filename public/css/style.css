@@ -40,10 +40,6 @@ body {
   font-size: 12px;
 }
 
-#check-window.width_fit-content {
-  width: fit-content;
-}
-
 /* ----- Title of modal window when displayed ----- */
 #check-window p {
   text-align: center;
@@ -405,13 +401,37 @@ input, select {
 /* ----- score window elements ----- */
 #check-window > div > ul {
   text-align: center;
+  width: 100%;
   margin: 0;
+}
+
+details {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+  transition: 3s;
+}
+
+summary {
+  width: fit-content;
+  min-width: 82px;
+  margin: 0 auto 15px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: 700;
 }
 
 /* ----- score details table ----- */
 .score_details_table {
   width: 100%;
   margin: 0 auto;
+}
+
+.score_details_table th, .score_details_table td {
+  width: 50%;
 }
 
 .score_details_table th, .score_details_table td {
