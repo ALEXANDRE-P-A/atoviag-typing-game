@@ -74,8 +74,12 @@ const showScore = _ => {
   checkWindowDiv.appendChild(details);
 
   modalWindowBtnArea.innerHTML = `
-    <span class="score_check material-symbols-outlined">done</span>
+    <span id="score_check" class="material-symbols-outlined">done</span>
   `;
+
+  document.getElementById("score_check").addEventListener("click",_=>{
+    checkWindow.classList.add("hidden");
+  });
 
   console.log(record);
 };
