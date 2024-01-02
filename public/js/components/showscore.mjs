@@ -79,6 +79,12 @@ const showScore = _ => {
 
   document.getElementById("score_check").addEventListener("click",_=>{
     checkWindow.classList.add("hidden");
+    if(document.querySelector("details summary").parentNode.hasAttribute("open"))
+      document.querySelector("details summary").parentNode.removeAttribute("open")
+  });
+
+  document.getElementById("see-details-btn").addEventListener("click",_=>{
+    checkWindow.classList.remove("hidden");
   });
 
   console.log(record);

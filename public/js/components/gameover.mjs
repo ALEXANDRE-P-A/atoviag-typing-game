@@ -54,7 +54,10 @@ const gameOver = id => {
 
   untypedField.textContent = "Game Over";
   titleMsg.classList.add("final");
-  titleMsg.innerHTML = `${rank(getKeypressCount(), getScore())}`;
+  titleMsg.innerHTML = `
+    ${rank(getKeypressCount(), getScore())}<br>
+    <span id="see-details-btn">Click here to see score details<span>
+  `;
 
   storeRank(
     getRank(getScore()),
