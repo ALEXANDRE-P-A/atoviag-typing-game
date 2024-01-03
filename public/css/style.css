@@ -48,12 +48,12 @@ body {
 }
 
 /* ----- Area of ​​confirmation items in modal window when displayed ----- */
-#check-window div, #check-window ol {
+#check-window .rules, #check-window ol {
   display: flex;
   flex-wrap: wrap;
 }
 
-#check-window div.center{
+#check-window .rules.center{
   justify-content: center;
 }
 
@@ -70,12 +70,12 @@ body {
   padding: 0;
 }
 
-#check-window ol li{
+/* #check-window ol li{
   position: relative;
   padding-left: 5px;
-}
+} */
 
-#check-window ol li:before {
+/* #check-window ol li:before {
   content: "";
   position: absolute;
   top: .1em;
@@ -87,7 +87,7 @@ body {
   height: 10px;
   border-right: 3px solid #fff;
   border-bottom: 3px solid  #fff;
-}
+} */
 
 #check-window ol li.li_effect:before {
   border-right: 3px solid lightgreen;
@@ -96,7 +96,7 @@ body {
 }
 
 /* ----- Confirmation items and check fields in the modal window when displayed ----- */
-#check-window div p, #check-window ol li  {
+#check-window .rules p, #check-window ol li  {
   text-align: left;
   line-height: 30px;
   font-size: 12px;
@@ -107,6 +107,31 @@ body {
 /* ----- Modal window when hidden ----- */
 #check-window.hidden {
   transform: translate(0,-500px);
+}
+
+/* ----- rules check box ----- */
+.item-check-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-check-box > .check {
+  opacity: .5;
+  cursor: pointer;
+  transition: .5s
+}
+
+.item-check-box > .check.checked {
+  opacity: 1;
+  color: lightgreen;
+  transition: .5s
+}
+
+.item-check-box >.check-action-text {
+  font-size: 1.2em;
 }
 
 /* ----- Modal window btn area ----- */
@@ -406,7 +431,7 @@ input, select {
 }
 
 /* ----- score window elements ----- */
-#check-window > div > ul {
+#check-window > .rules > ul {
   text-align: center;
   width: 100%;
   margin: 0;
@@ -465,14 +490,14 @@ summary {
   }
 
   /* ----- Area of ​​confirmation items in modal window when displayed SP ----- */
-  #check-window div, #check-window ol, #check-window ul {
+  #check-window .rules, #check-window ol, #check-window ul {
     width: 90%;
     flex-direction: column;
     margin: 15px auto;
   }
 
   /* ----- Confirmation items and check fields in the modal window when displayed SP ----- */
-  #check-window div p, #check-window ol li  {
+  #check-window rules p, #check-window ol li  {
     width: auto;
   }
 
