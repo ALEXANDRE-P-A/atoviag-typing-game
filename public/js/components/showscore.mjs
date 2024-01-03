@@ -72,6 +72,7 @@ const showScore = _ => {
   `;
 
   checkWindowDiv.appendChild(details);
+  document.querySelector("details").setAttribute("open", true);
 
   modalWindowBtnArea.innerHTML = `
     <span id="score_check" class="material-symbols-outlined">done</span>
@@ -80,7 +81,7 @@ const showScore = _ => {
   document.getElementById("score_check").addEventListener("click",_=>{
     checkWindow.classList.add("hidden");
     if(document.querySelector("details summary").parentNode.hasAttribute("open"))
-      document.querySelector("details summary").parentNode.removeAttribute("open")
+      document.querySelector("details summary").parentNode.removeAttribute("open");
   });
 
   document.getElementById("see-details-btn").addEventListener("click",_=>{

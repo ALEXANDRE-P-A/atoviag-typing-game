@@ -26,14 +26,14 @@ visualViewport.onresize = function () {
 };
 
 /* ----- Keyboard judgment ----- */
-window.addEventListener('keydown', e => {
-  if(e.isComposing || e.key === 'Process' || e.keyCode === 229){  
-    document.getElementById("keypress-type-field").value = "";
+window.addEventListener("keydown", e => {
+  if(e.isComposing || e.key === "Process" || e.keyCode === 229){  
     titleMsg.textContent = "use english keyboard only";
     titleMsg.classList.add("show");
     setTimeout(_ => {
       titleMsg.classList.remove("show");
       titleMsg.textContent = "";
+      document.getElementById("text-input-field").value = "";
     }, 1500);
   }
 });

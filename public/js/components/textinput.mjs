@@ -22,6 +22,17 @@ const alert = inputText => {
   }
 };
 
+const alertCopyPaste = _ => {
+  if(getTime() >= 2){
+    titleMsg.textContent = "do not copy and paste";
+    titleMsg.classList.add("show");
+    setTimeout(_ => {
+      titleMsg.classList.remove("show");
+      titleMsg.textContent = "";
+    }, 1500);
+  }
+}
+
 const textInputConfirmedAction = typeCounter => {
   let accurancyCheck = untypedField.textContent === document.getElementById("text-input-field").value;
   let textLength = untypedField.textContent.length;
@@ -35,6 +46,13 @@ const textInputConfirmedAction = typeCounter => {
       textArea.classList.remove("correct_text");
     }, 100);
     createText();
+  } else if(accurancyCheck && !typeCheck){
+    textArea.classList.add("incorrect_text");
+    setTimeout(_ => {
+      textArea.classList.remove("incorrect_text");
+    }, 100);
+    alertCopyPaste();
+    document.getElementById("text-input-field").value = "";
   } else {
     textArea.classList.add("incorrect_text");
     setTimeout(_ => {
