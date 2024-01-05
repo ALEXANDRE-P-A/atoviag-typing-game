@@ -12,5 +12,16 @@
       gameStartBtn.disabled = true;
     } 
   };
+
+  const uncheckAction = _ => {
+    if(rulesCheck.textContent === "check_box") {
+      rulesCheck.textContent = "check_box_outline_blank";
+      rulesCheck.classList.remove("checked");
+      gameStartBtn.disabled = true;
+    } 
+  }; 
   
-  export { checkAction };
+  export { 
+    checkAction,
+    uncheckAction
+  };

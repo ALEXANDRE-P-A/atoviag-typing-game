@@ -57,7 +57,7 @@ const showScore = _ => {
 
   const details = document.createElement("details");
   details.innerHTML = `
-    <summary>Score details</summary>
+    <summary>score details</summary>
     <table class="score_details_table">
       <thead>
         <tr>
@@ -72,7 +72,7 @@ const showScore = _ => {
   `;
 
   checkWindowDiv.appendChild(details);
-  document.querySelector("details").setAttribute("open", true);
+  // document.querySelector("details").setAttribute("open", true);
 
   modalWindowBtnArea.innerHTML = `
     <span id="score_check" class="material-symbols-outlined">done</span>
@@ -85,6 +85,7 @@ const showScore = _ => {
   });
 
   document.getElementById("see-details-btn").addEventListener("click",_=>{
+    document.querySelector("details").setAttribute("open", true);
     checkWindow.classList.remove("hidden");
   });
 
