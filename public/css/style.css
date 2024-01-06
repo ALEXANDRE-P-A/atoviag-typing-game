@@ -33,7 +33,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  transition:  .5s;
+  transition:  1s;
   z-index: 4;
   text-align: left;
   font-weight: bold;
@@ -107,7 +107,7 @@ body {
 /* ----- Modal window when hidden ----- */
 #check-window.hidden {
   transform: translate(0,-500px);
-  transition:  .5s;
+  transition:  1s;
 }
 
 /* ----- rules check box ----- */
@@ -520,7 +520,12 @@ summary {
 
   /* ----- Modal window close btn SP ----- */
   .check-window-close-btn {
-    right: 20;
+    margin-right: 20px;
+  }
+
+  /* ----- rules check box SP ----- */
+  .item-check-box {
+    line-height: 40px;
   }
 
   /* ----- navigation SP ----- */
