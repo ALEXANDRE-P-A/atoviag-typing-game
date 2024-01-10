@@ -15,7 +15,7 @@ const keypressTypeWindowAction = _ => {
   gameStartBtn.setAttribute("data-method", "keypress");
   addRules(keypressTypeRules);
   // rulesCheckEffect();
-  rulesCheckBox.addEventListener("click", checkAction)
+  rulesCheckBox.addEventListener("click", checkAction);
   gameStartBtn.addEventListener("click", startAction);
   checkWindowCloseBtn.addEventListener("click", closeWindow);
 };
@@ -25,6 +25,7 @@ const textInputTypeWindowAction = _ => {
   gameStartBtn.setAttribute("data-method", "textinput");
   addRules(textinputTypeRules);
   // rulesCheckEffect();
+  rulesCheckBox.addEventListener("click", checkAction);
   gameStartBtn.addEventListener("click", startAction);
   checkWindowCloseBtn.addEventListener("click", closeWindow);
 };

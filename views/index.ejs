@@ -96,6 +96,16 @@
         `${navigator.userAgent}`,
       );
     </script>
+  <% } else { %>
+    <script type="module">
+      import { storeUserInfo } from "/public/js/components/storegrades.mjs";
+
+      storeUserInfo(
+        null,
+        "none",
+        `${navigator.userAgent}`,
+      );
+    </script>
   <% } %>
 </body>
 </html>
