@@ -26,5 +26,6 @@ router.use("/certify", require("./certify.js"));
 router.use("/signin", require("./signin.js"));
 router.use("/passwordchange", require("./passwordchange.js"));
 router.use("/textlist", require("./textlist.js"));
+router.use("/fetchresult", require("./fetchresult.js"));
 
 module.exports = router;

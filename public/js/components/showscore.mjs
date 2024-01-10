@@ -1,5 +1,6 @@
 import { getUserRecord } from "./storegrades.mjs";
 import { rank } from "./rank.mjs";
+import { fetchResult } from "./fetchresult.mjs";
 
 const checkWindow = document.getElementById("check-window");
 const checkWindowTitle = document.querySelector("#check-window p");
@@ -89,7 +90,7 @@ const showScore = _ => {
     checkWindow.classList.remove("hidden");
   });
 
-  console.log(record);
+  fetchResult(record);
 };
 
 export { showScore }; 

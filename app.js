@@ -20,6 +20,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.disable("x-powered-by");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // expose global method to view engine
 app.use((req, res, next) => {
