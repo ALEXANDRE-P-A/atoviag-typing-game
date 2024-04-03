@@ -474,6 +474,40 @@ summary {
   font-variation-settings: 'FILL' 0, 'wght' 5000, 'GRAD' 0, 'opsz' 24;
 }
 
+/* ----- histories section ----- */
+section.histories {
+  display: block;
+}
+
+section.histories > h5 {
+  text-align: center;
+  margin: 15px auto 0;
+}
+
+/* ----- your histories div ----- */
+.play-histories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* ----- your histories card style ----- */
+.card-fix {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  border-radius: 0;
+}
+
+/* ----- your histories card score info ----- */
+.score-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 767px) {
   /* ----- whole body SP ----- */
   body {
@@ -601,5 +635,30 @@ summary {
 
   .score_details_table td {
     width: 30%;
+  }
+
+  section.histories {
+  }
+
+  /* ----- your histories div ----- */
+  .play-histories {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* ----- your histories card style ----- */
+  .card-fix {
+    width: 95%;
+  }
+
+  /* ----- your histories card score info ----- */
+  .score-info {
+    width: 100%;
+    display: flex;
+  }
+
+  .score-info > li {
+    margin-right: 5px;
   }
 }

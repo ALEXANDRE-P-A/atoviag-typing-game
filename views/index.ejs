@@ -48,7 +48,7 @@
 
     <!-- ----- button area starts here ----- -->
   
-    <% // if(locals.user) { %>
+    <% if(locals.user) { %>
       <section class="btn_field">
         <!-- keypress type button starts here -->
         <button style="display: flex; flex-direction: column; align-items: center;" id="keypresstype_btn">
@@ -64,20 +64,99 @@
         </button>
         <!-- text input type button ends here -->
       </section>
-    <% // } else { %>
+    <% } else { %>
       <section class="btn_field">
         <!-- sign in button starts here -->
-        <!-- <button onclick="location.href='/signin'">
+        <button onclick="location.href='/signin'">
           <span class="btn_inside">
             <span class="material-symbols-outlined">login</span>
             <span class="btn_text">&nbsp;Sign In</span>
           </span>
-        </button> -->
+        </button>
         <!-- sign in button ends here -->
       </section>
-    <% // } %>
+    <% } %>
       
     <!-- ----- button area ends here ----- -->
+    <% if(locals.user) { %>
+      <section class="histories">
+        <h5>Your History</h5>
+        <div class="play-histories">
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+          <div class="card card-fix">
+            <div class="card-body">
+              <h5 class="card-title">S 04/04/2024 19:58</h5>
+              <ul class="score-info">
+                <li>Device: iPhone15 Pro</li>
+                <li>Gametype: keypress</li>
+                <li>Rank: S</li>
+                <li>Accurancy: 93%</li>
+              </ul>
+              <a href="#">Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    <% } %>
 
   </main>
   <!-- ----- main ends here ----- -->
